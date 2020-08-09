@@ -49,6 +49,7 @@
 		061EAFBE24E0C24000E18460 /* FickrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FickrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		061EAFC224E0C24000E18460 /* FickrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FickrUITests.swift; sourceTree = "<group>"; };
 		061EAFC424E0C24000E18460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfiguration.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 		061EAF9F24E0C23D00E18460 /* Fickr */ = {
 			isa = PBXGroup;
 			children = (
+				061EAFD024E0C33600E18460 /* Configs */,
 				061EAFA024E0C23D00E18460 /* AppDelegate.swift */,
 				061EAFA224E0C23D00E18460 /* SceneDelegate.swift */,
 				061EAFA424E0C23D00E18460 /* ViewController.swift */,
@@ -126,6 +128,14 @@
 				061EAFC424E0C24000E18460 /* Info.plist */,
 			);
 			path = FickrUITests;
+			sourceTree = "<group>";
+		};
+		061EAFD024E0C33600E18460 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */,
+			);
+			path = Configs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +328,7 @@
 /* Begin XCBuildConfiguration section */
 		061EAFC524E0C24000E18460 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -378,6 +389,7 @@
 		};
 		061EAFC624E0C24000E18460 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -432,6 +444,7 @@
 		};
 		061EAFC824E0C24000E18460 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +462,7 @@
 		};
 		061EAFC924E0C24000E18460 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +480,7 @@
 		};
 		061EAFCB24E0C24000E18460 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +502,7 @@
 		};
 		061EAFCC24E0C24000E18460 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +524,7 @@
 		};
 		061EAFCE24E0C24000E18460 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +544,7 @@
 		};
 		061EAFCF24E0C24000E18460 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

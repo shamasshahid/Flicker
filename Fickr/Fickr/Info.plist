@@ -60,5 +60,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>flickr_api_key</key>
+	<string>$(FLICKR_API_KEY)</string>
 </dict>
 </plist>
