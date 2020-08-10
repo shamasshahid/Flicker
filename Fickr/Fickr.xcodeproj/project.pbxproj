@@ -15,6 +15,15 @@
 		061EAFAD24E0C23F00E18460 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061EAFAB24E0C23F00E18460 /* LaunchScreen.storyboard */; };
 		061EAFB824E0C24000E18460 /* FickrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFB724E0C24000E18460 /* FickrTests.swift */; };
 		061EAFC324E0C24000E18460 /* FickrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFC224E0C24000E18460 /* FickrUITests.swift */; };
+		061EAFD824E0D06100E18460 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFD724E0D06100E18460 /* APIService.swift */; };
+		061EAFDA24E0D07100E18460 /* APIRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFD924E0D07100E18460 /* APIRoutable.swift */; };
+		061EAFDD24E0E10500E18460 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFDC24E0E10500E18460 /* PhotoModel.swift */; };
+		061EAFDF24E0FCB100E18460 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFDE24E0FCB100E18460 /* SearchService.swift */; };
+		061EAFE124E0FCDC00E18460 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFE024E0FCDC00E18460 /* SearchRouter.swift */; };
+		061EAFE424E1095F00E18460 /* SearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFE324E1095F00E18460 /* SearchResponseModel.swift */; };
+		061EAFE624E10B4A00E18460 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFE524E10B4A00E18460 /* SearchViewModel.swift */; };
+		061EAFE824E1101D00E18460 /* DependencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFE724E1101D00E18460 /* DependencyRepository.swift */; };
+		0680458E24E12566002319A6 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680458D24E12566002319A6 /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +59,15 @@
 		061EAFC224E0C24000E18460 /* FickrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FickrUITests.swift; sourceTree = "<group>"; };
 		061EAFC424E0C24000E18460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfiguration.xcconfig; sourceTree = "<group>"; };
+		061EAFD724E0D06100E18460 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		061EAFD924E0D07100E18460 /* APIRoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoutable.swift; sourceTree = "<group>"; };
+		061EAFDC24E0E10500E18460 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		061EAFDE24E0FCB100E18460 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		061EAFE024E0FCDC00E18460 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		061EAFE324E1095F00E18460 /* SearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseModel.swift; sourceTree = "<group>"; };
+		061EAFE524E10B4A00E18460 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		061EAFE724E1101D00E18460 /* DependencyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRepository.swift; sourceTree = "<group>"; };
+		0680458D24E12566002319A6 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,10 +118,11 @@
 		061EAF9F24E0C23D00E18460 /* Fickr */ = {
 			isa = PBXGroup;
 			children = (
+				061EAFDB24E0E0F600E18460 /* Models */,
+				061EAFD624E0D05500E18460 /* Network */,
+				061EAFD524E0C3E800E18460 /* SearchView */,
+				061EAFD224E0C3BB00E18460 /* App Delegates */,
 				061EAFD024E0C33600E18460 /* Configs */,
-				061EAFA024E0C23D00E18460 /* AppDelegate.swift */,
-				061EAFA224E0C23D00E18460 /* SceneDelegate.swift */,
-				061EAFA424E0C23D00E18460 /* ViewController.swift */,
 				061EAFA624E0C23D00E18460 /* Main.storyboard */,
 				061EAFA924E0C23F00E18460 /* Assets.xcassets */,
 				061EAFAB24E0C23F00E18460 /* LaunchScreen.storyboard */,
@@ -136,6 +155,46 @@
 				061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */,
 			);
 			path = Configs;
+			sourceTree = "<group>";
+		};
+		061EAFD224E0C3BB00E18460 /* App Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				061EAFA024E0C23D00E18460 /* AppDelegate.swift */,
+				061EAFA224E0C23D00E18460 /* SceneDelegate.swift */,
+			);
+			path = "App Delegates";
+			sourceTree = "<group>";
+		};
+		061EAFD524E0C3E800E18460 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				061EAFA424E0C23D00E18460 /* ViewController.swift */,
+				061EAFE524E10B4A00E18460 /* SearchViewModel.swift */,
+				0680458D24E12566002319A6 /* ImageCollectionViewCell.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		061EAFD624E0D05500E18460 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				061EAFD724E0D06100E18460 /* APIService.swift */,
+				061EAFD924E0D07100E18460 /* APIRoutable.swift */,
+				061EAFDE24E0FCB100E18460 /* SearchService.swift */,
+				061EAFE024E0FCDC00E18460 /* SearchRouter.swift */,
+				061EAFE724E1101D00E18460 /* DependencyRepository.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		061EAFDB24E0E0F600E18460 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				061EAFDC24E0E10500E18460 /* PhotoModel.swift */,
+				061EAFE324E1095F00E18460 /* SearchResponseModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,8 +328,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				061EAFDD24E0E10500E18460 /* PhotoModel.swift in Sources */,
 				061EAFA524E0C23D00E18460 /* ViewController.swift in Sources */,
 				061EAFA124E0C23D00E18460 /* AppDelegate.swift in Sources */,
+				061EAFD824E0D06100E18460 /* APIService.swift in Sources */,
+				061EAFE824E1101D00E18460 /* DependencyRepository.swift in Sources */,
+				061EAFE124E0FCDC00E18460 /* SearchRouter.swift in Sources */,
+				0680458E24E12566002319A6 /* ImageCollectionViewCell.swift in Sources */,
+				061EAFDF24E0FCB100E18460 /* SearchService.swift in Sources */,
+				061EAFE624E10B4A00E18460 /* SearchViewModel.swift in Sources */,
+				061EAFE424E1095F00E18460 /* SearchResponseModel.swift in Sources */,
+				061EAFDA24E0D07100E18460 /* APIRoutable.swift in Sources */,
 				061EAFA324E0C23D00E18460 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
