@@ -18,4 +18,11 @@ struct PhotoModel: Codable {
     let ispublic: Int
     let isfriend: Int
     let isfamily: Int
+    let tags: String?
+    let url_m: String?
+    let url_o: String?
+    
+    var separatedTags: [String] {
+        return tags != nil ? tags!.components(separatedBy: " ") : []
+    }
 }

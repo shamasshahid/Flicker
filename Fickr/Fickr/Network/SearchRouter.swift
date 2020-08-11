@@ -11,14 +11,15 @@ import Foundation
 class SearchRouter: APIRoutable {
     
     var searchString: String = ""
-    var apiKey: String = ""
+    var apiKey: String = "8b3db204c28ac75d88db7d7e41c8feb3"
     
     var queryItems: [String : Any] {
         return ["method": "flickr.photos.search",
                 "api_key": apiKey,
                 "text": searchString,
                 "format" : "json",
-                "nojsoncallback" : "1"]
+                "nojsoncallback" : "1",
+                "extras": "tags%2C+url_o%2C+url_m"]
     }
     
 }

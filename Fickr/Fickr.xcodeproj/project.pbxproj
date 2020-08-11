@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,7 +23,17 @@
 		061EAFE424E1095F00E18460 /* SearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFE324E1095F00E18460 /* SearchResponseModel.swift */; };
 		061EAFE624E10B4A00E18460 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFE524E10B4A00E18460 /* SearchViewModel.swift */; };
 		061EAFE824E1101D00E18460 /* DependencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFE724E1101D00E18460 /* DependencyRepository.swift */; };
-		0680458E24E12566002319A6 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680458D24E12566002319A6 /* ImageCollectionViewCell.swift */; };
+		0639ECAB24E176700066EACD /* FiltersRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639ECAA24E176700066EACD /* FiltersRowView.swift */; };
+		0639ECAE24E1784F0066EACD /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639ECAD24E1784F0066EACD /* FilterViewController.swift */; };
+		0639ECB024E179610066EACD /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639ECAF24E179610066EACD /* FilterTableViewCell.swift */; };
+		0639ECB224E179AA0066EACD /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639ECB124E179AA0066EACD /* FiltersViewModel.swift */; };
+		0680458E24E12566002319A6 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680458D24E12566002319A6 /* PhotoCollectionViewCell.swift */; };
+		0682558E24E21B9C005833BA /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682558D24E21B9C005833BA /* FilterModel.swift */; };
+		0682559024E21C4B005833BA /* FilterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682558F24E21C4B005833BA /* FilterCellViewModel.swift */; };
+		06C50D6A24E1299700523054 /* PhotoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C50D6924E1299700523054 /* PhotoCellViewModel.swift */; };
+		24C3E54D0637B48A2E0C8AB8 /* Pods_Fickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F420D126A2A6762F6FB443 /* Pods_Fickr.framework */; };
+		6258444766BEE1525408F466 /* Pods_FickrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 275399DFDC3E95A541790F30 /* Pods_FickrTests.framework */; };
+		7528CCF2072CF5DD6134B706 /* Pods_Fickr_FickrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B83C0A1AB8FC89D92D7449 /* Pods_Fickr_FickrUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +77,23 @@
 		061EAFE324E1095F00E18460 /* SearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseModel.swift; sourceTree = "<group>"; };
 		061EAFE524E10B4A00E18460 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		061EAFE724E1101D00E18460 /* DependencyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRepository.swift; sourceTree = "<group>"; };
-		0680458D24E12566002319A6 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		0639ECAA24E176700066EACD /* FiltersRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersRowView.swift; sourceTree = "<group>"; };
+		0639ECAD24E1784F0066EACD /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		0639ECAF24E179610066EACD /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		0639ECB124E179AA0066EACD /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
+		0680458D24E12566002319A6 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		0682558D24E21B9C005833BA /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
+		0682558F24E21C4B005833BA /* FilterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellViewModel.swift; sourceTree = "<group>"; };
+		06C50D6924E1299700523054 /* PhotoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellViewModel.swift; sourceTree = "<group>"; };
+		275399DFDC3E95A541790F30 /* Pods_FickrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FickrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5962F9C631FF5F9D5D4E909B /* Pods-Fickr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fickr.release.xcconfig"; path = "Target Support Files/Pods-Fickr/Pods-Fickr.release.xcconfig"; sourceTree = "<group>"; };
+		8A11D0C5EAAD3C28E56BAFF9 /* Pods-Fickr-FickrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fickr-FickrUITests.debug.xcconfig"; path = "Target Support Files/Pods-Fickr-FickrUITests/Pods-Fickr-FickrUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A0A81F396E1DC2BC8EAE72E8 /* Pods-Fickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fickr.debug.xcconfig"; path = "Target Support Files/Pods-Fickr/Pods-Fickr.debug.xcconfig"; sourceTree = "<group>"; };
+		B065E8708C005FF37B0246B5 /* Pods-FickrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FickrTests.release.xcconfig"; path = "Target Support Files/Pods-FickrTests/Pods-FickrTests.release.xcconfig"; sourceTree = "<group>"; };
+		BEE1B754E126C84589FC0DE6 /* Pods-FickrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FickrTests.debug.xcconfig"; path = "Target Support Files/Pods-FickrTests/Pods-FickrTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C2B83C0A1AB8FC89D92D7449 /* Pods_Fickr_FickrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fickr_FickrUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4F420D126A2A6762F6FB443 /* Pods_Fickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBB9523E3065EE05D0A8BF30 /* Pods-Fickr-FickrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fickr-FickrUITests.release.xcconfig"; path = "Target Support Files/Pods-Fickr-FickrUITests/Pods-Fickr-FickrUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C3E54D0637B48A2E0C8AB8 /* Pods_Fickr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6258444766BEE1525408F466 /* Pods_FickrTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7528CCF2072CF5DD6134B706 /* Pods_Fickr_FickrUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +131,8 @@
 				061EAFB624E0C24000E18460 /* FickrTests */,
 				061EAFC124E0C24000E18460 /* FickrUITests */,
 				061EAF9E24E0C23D00E18460 /* Products */,
+				F9BDA17DEE045CDAA31AC321 /* Pods */,
+				0AEEED80D6634AA079D5D626 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,9 +149,9 @@
 		061EAF9F24E0C23D00E18460 /* Fickr */ = {
 			isa = PBXGroup;
 			children = (
-				061EAFDB24E0E0F600E18460 /* Models */,
+				06B6F14A24E2160500D28957 /* Features */,
+				061EAFDB24E0E0F600E18460 /* Entities */,
 				061EAFD624E0D05500E18460 /* Network */,
-				061EAFD524E0C3E800E18460 /* SearchView */,
 				061EAFD224E0C3BB00E18460 /* App Delegates */,
 				061EAFD024E0C33600E18460 /* Configs */,
 				061EAFA624E0C23D00E18460 /* Main.storyboard */,
@@ -169,9 +200,8 @@
 		061EAFD524E0C3E800E18460 /* SearchView */ = {
 			isa = PBXGroup;
 			children = (
-				061EAFA424E0C23D00E18460 /* ViewController.swift */,
-				061EAFE524E10B4A00E18460 /* SearchViewModel.swift */,
-				0680458D24E12566002319A6 /* ImageCollectionViewCell.swift */,
+				06B6F14E24E2165600D28957 /* ViewModel */,
+				06B6F14D24E2164E00D28957 /* View */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -188,13 +218,92 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		061EAFDB24E0E0F600E18460 /* Models */ = {
+		061EAFDB24E0E0F600E18460 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				061EAFDC24E0E10500E18460 /* PhotoModel.swift */,
 				061EAFE324E1095F00E18460 /* SearchResponseModel.swift */,
 			);
-			path = Models;
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		0639ECA924E176520066EACD /* FilterViews */ = {
+			isa = PBXGroup;
+			children = (
+				06B6F14C24E2163100D28957 /* ViewModel */,
+				06B6F14B24E2162B00D28957 /* View */,
+			);
+			path = FilterViews;
+			sourceTree = "<group>";
+		};
+		06B6F14A24E2160500D28957 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				0639ECA924E176520066EACD /* FilterViews */,
+				061EAFD524E0C3E800E18460 /* SearchView */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		06B6F14B24E2162B00D28957 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0639ECAF24E179610066EACD /* FilterTableViewCell.swift */,
+				0639ECAD24E1784F0066EACD /* FilterViewController.swift */,
+				0639ECAA24E176700066EACD /* FiltersRowView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		06B6F14C24E2163100D28957 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0639ECB124E179AA0066EACD /* FiltersViewModel.swift */,
+				0682558D24E21B9C005833BA /* FilterModel.swift */,
+				0682558F24E21C4B005833BA /* FilterCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		06B6F14D24E2164E00D28957 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				061EAFA424E0C23D00E18460 /* ViewController.swift */,
+				0680458D24E12566002319A6 /* PhotoCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		06B6F14E24E2165600D28957 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				061EAFE524E10B4A00E18460 /* SearchViewModel.swift */,
+				06C50D6924E1299700523054 /* PhotoCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0AEEED80D6634AA079D5D626 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4F420D126A2A6762F6FB443 /* Pods_Fickr.framework */,
+				C2B83C0A1AB8FC89D92D7449 /* Pods_Fickr_FickrUITests.framework */,
+				275399DFDC3E95A541790F30 /* Pods_FickrTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9BDA17DEE045CDAA31AC321 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A0A81F396E1DC2BC8EAE72E8 /* Pods-Fickr.debug.xcconfig */,
+				5962F9C631FF5F9D5D4E909B /* Pods-Fickr.release.xcconfig */,
+				8A11D0C5EAAD3C28E56BAFF9 /* Pods-Fickr-FickrUITests.debug.xcconfig */,
+				CBB9523E3065EE05D0A8BF30 /* Pods-Fickr-FickrUITests.release.xcconfig */,
+				BEE1B754E126C84589FC0DE6 /* Pods-FickrTests.debug.xcconfig */,
+				B065E8708C005FF37B0246B5 /* Pods-FickrTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +313,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 061EAFC724E0C24000E18460 /* Build configuration list for PBXNativeTarget "Fickr" */;
 			buildPhases = (
+				90403633A8143779941E9362 /* [CP] Check Pods Manifest.lock */,
 				061EAF9924E0C23D00E18460 /* Sources */,
 				061EAF9A24E0C23D00E18460 /* Frameworks */,
 				061EAF9B24E0C23D00E18460 /* Resources */,
+				98639FFF08ECAE77720B2AB1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,6 +332,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 061EAFCA24E0C24000E18460 /* Build configuration list for PBXNativeTarget "FickrTests" */;
 			buildPhases = (
+				64E631EBBDB659504A6839E7 /* [CP] Check Pods Manifest.lock */,
 				061EAFAF24E0C24000E18460 /* Sources */,
 				061EAFB024E0C24000E18460 /* Frameworks */,
 				061EAFB124E0C24000E18460 /* Resources */,
@@ -239,9 +351,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 061EAFCD24E0C24000E18460 /* Build configuration list for PBXNativeTarget "FickrUITests" */;
 			buildPhases = (
+				718D55E8FA5979BF86966389 /* [CP] Check Pods Manifest.lock */,
 				061EAFBA24E0C24000E18460 /* Sources */,
 				061EAFBB24E0C24000E18460 /* Frameworks */,
 				061EAFBC24E0C24000E18460 /* Resources */,
+				4A9EC308590206F7E18CE65D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -323,21 +437,131 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4A9EC308590206F7E18CE65D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fickr-FickrUITests/Pods-Fickr-FickrUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fickr-FickrUITests/Pods-Fickr-FickrUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fickr-FickrUITests/Pods-Fickr-FickrUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64E631EBBDB659504A6839E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FickrTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		718D55E8FA5979BF86966389 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fickr-FickrUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90403633A8143779941E9362 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fickr-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98639FFF08ECAE77720B2AB1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fickr/Pods-Fickr-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fickr/Pods-Fickr-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fickr/Pods-Fickr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		061EAF9924E0C23D00E18460 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				061EAFDD24E0E10500E18460 /* PhotoModel.swift in Sources */,
+				0639ECB224E179AA0066EACD /* FiltersViewModel.swift in Sources */,
+				06C50D6A24E1299700523054 /* PhotoCellViewModel.swift in Sources */,
+				0682558E24E21B9C005833BA /* FilterModel.swift in Sources */,
 				061EAFA524E0C23D00E18460 /* ViewController.swift in Sources */,
 				061EAFA124E0C23D00E18460 /* AppDelegate.swift in Sources */,
+				0682559024E21C4B005833BA /* FilterCellViewModel.swift in Sources */,
 				061EAFD824E0D06100E18460 /* APIService.swift in Sources */,
+				0639ECAB24E176700066EACD /* FiltersRowView.swift in Sources */,
 				061EAFE824E1101D00E18460 /* DependencyRepository.swift in Sources */,
 				061EAFE124E0FCDC00E18460 /* SearchRouter.swift in Sources */,
-				0680458E24E12566002319A6 /* ImageCollectionViewCell.swift in Sources */,
+				0680458E24E12566002319A6 /* PhotoCollectionViewCell.swift in Sources */,
+				0639ECAE24E1784F0066EACD /* FilterViewController.swift in Sources */,
 				061EAFDF24E0FCB100E18460 /* SearchService.swift in Sources */,
 				061EAFE624E10B4A00E18460 /* SearchViewModel.swift in Sources */,
 				061EAFE424E1095F00E18460 /* SearchResponseModel.swift in Sources */,
+				0639ECB024E179610066EACD /* FilterTableViewCell.swift in Sources */,
 				061EAFDA24E0D07100E18460 /* APIRoutable.swift in Sources */,
 				061EAFA324E0C23D00E18460 /* SceneDelegate.swift in Sources */,
 			);
@@ -396,7 +620,6 @@
 /* Begin XCBuildConfiguration section */
 		061EAFC524E0C24000E18460 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -457,7 +680,6 @@
 		};
 		061EAFC624E0C24000E18460 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -512,7 +734,7 @@
 		};
 		061EAFC824E0C24000E18460 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
+			baseConfigurationReference = A0A81F396E1DC2BC8EAE72E8 /* Pods-Fickr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,7 +752,7 @@
 		};
 		061EAFC924E0C24000E18460 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
+			baseConfigurationReference = 5962F9C631FF5F9D5D4E909B /* Pods-Fickr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,7 +770,7 @@
 		};
 		061EAFCB24E0C24000E18460 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
+			baseConfigurationReference = BEE1B754E126C84589FC0DE6 /* Pods-FickrTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -570,7 +792,7 @@
 		};
 		061EAFCC24E0C24000E18460 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
+			baseConfigurationReference = B065E8708C005FF37B0246B5 /* Pods-FickrTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -592,7 +814,7 @@
 		};
 		061EAFCE24E0C24000E18460 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
+			baseConfigurationReference = 8A11D0C5EAAD3C28E56BAFF9 /* Pods-Fickr-FickrUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -612,7 +834,7 @@
 		};
 		061EAFCF24E0C24000E18460 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
+			baseConfigurationReference = CBB9523E3065EE05D0A8BF30 /* Pods-Fickr-FickrUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

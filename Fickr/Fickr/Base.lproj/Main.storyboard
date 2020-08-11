@@ -33,7 +33,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="image_collection_cell" id="AmK-dJ-L9b" customClass="ImageCollectionViewCell" customModule="Fickr" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="image_collection_cell" id="AmK-dJ-L9b" customClass="PhotoCollectionViewCell" customModule="Fickr" customModuleProvider="target">
                                         <rect key="frame" x="104.5" y="0.0" width="205" height="207"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NSh-Zp-AQS">
@@ -52,10 +52,13 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="205" height="207"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="ssJ-wG-WQw" id="hdi-Dv-otY"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yel-NI-4EY">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yel-NI-4EY" customClass="FiltersRowView" customModule="Fickr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="144" width="414" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -78,7 +81,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Oww-sK-Gqc"/>
+                    <navigationItem key="navigationItem" id="Oww-sK-Gqc">
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="wC6-LQ-sdl">
+                            <connections>
+                                <segue destination="26W-xA-lt1" kind="popoverPresentation" popoverAnchorBarButtonItem="wC6-LQ-sdl" id="KZg-Dd-J3n">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Jh6-Lm-3Cg" id="Bsd-MI-kjM"/>
                         <outlet property="searchBar" destination="M6j-Xn-Sk2" id="4t5-SA-QRB"/>
@@ -86,7 +97,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="136.60714285714286"/>
+            <point key="canvasLocation" x="1032" y="132"/>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="MOj-n6-fa8">
+            <objects>
+                <viewController id="26W-xA-lt1" customClass="FilterViewController" customModule="Fickr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jiN-hs-3OD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mG6-d8-8mv">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="filter_cell" textLabel="Vnf-uO-WDK" style="IBUITableViewCellStyleDefault" id="QjE-NW-eko" customClass="FilterTableViewCell" customModule="Fickr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QjE-NW-eko" id="6qN-zO-Rvl">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vnf-uO-WDK">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="73E-On-PLo"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableview" destination="mG6-d8-8mv" id="JXn-tR-QU3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tg4-aY-gKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894.2028985507247" y="131.91964285714286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oFh-tO-5ou">

@@ -12,7 +12,8 @@ class SearchViewModel {
     
     let service: APIService
     
-    var dataRefreshed: (()-> Void)?
+    var dataRefreshed: (() -> Void)?
+    
     var router: SearchRouter {
         didSet {
             guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "flickr_api_key") as? String, !apiKey.isEmpty else {
@@ -29,13 +30,12 @@ class SearchViewModel {
     }
     
     init(apiService: APIService, apiRouter: SearchRouter) {
-        
         service = apiService
         router = apiRouter
-        
     }
     
-    func makeSearchCall() {
+    func makeSearchCall(searchString: String) {
+        router.searchString = "mountain"
         
         service.fetch(urlRequest: router) {[weak self] (result) in
             switch result {
@@ -48,9 +48,23 @@ class SearchViewModel {
     }
     
     func searchEntered(searchQuery: String) {
-        
         router.searchString = searchQuery
+    }
+    
+    func getModelForCellIndex(index: Int) -> PhotoCellViewModel? {
         
+        return PhotoCellViewModel(photoModel: photoModels[index])
+    }
+    
+    func getFiltersVM() -> FiltersViewModel? {
+        var allTags = Set<String>()
+        
+        for aPhoto in photoModels {
+            allTags = allTags.union(aPhoto.separatedTags)
+        }
+        
+        let viewmodel = FiltersViewModel(allFilters: allTags)
+        return viewmodel
     }
     
 }
