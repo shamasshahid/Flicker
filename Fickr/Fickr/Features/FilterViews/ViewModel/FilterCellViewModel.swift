@@ -12,8 +12,8 @@ class FilterCellViewModel {
     
     var filterModel: FilterModel
     
-    var stateUpdatedCallBack: (() -> Void)?
-    
+    var updateViewCallBack: (() -> Void)?
+    var updateStateCallBack: ((FilterModel) -> Void)?
     
     init(model: FilterModel) {
         
@@ -30,7 +30,8 @@ class FilterCellViewModel {
     
     func selectionChanged(isSelected: Bool) {
         filterModel.isSelected = isSelected
-        stateUpdatedCallBack?()
+        updateStateCallBack?(filterModel)
+        updateViewCallBack?()
     }
     
 }

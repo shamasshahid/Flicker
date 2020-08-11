@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Create and assign the viewmodel r
-        if let destination = segue.destination as? FilterViewController {
+        if let destination = (segue.destination as? UINavigationController)?.viewControllers.first as? FilterViewController {
             let filterModel = viewModel.getFiltersVM()
             destination.viewModel = filterModel
         }
@@ -64,7 +64,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.photoModels.count
+        return viewModel.rowCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,7 +77,5 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         
         return cell
     }
-    
-    
 }
 

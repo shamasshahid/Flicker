@@ -10,28 +10,39 @@ import Foundation
 
 class FiltersViewModel {
     
-    let filters: [String]
-    let filterSet: Set<String>
+    var filterModelsArray: [FilterModel] = []
     
-    init(allFilters:Set<String>) {
-        filterSet = allFilters
-        filters = Array(filterSet).sorted()
+    var setSelectedModels: (([FilterModel]) -> ())?
+    
+    init(allFilters: [FilterModel]) {
+        filterModelsArray = allFilters
     }
     
     var rowCount: Int {
-        return filters.count
+        return filterModelsArray.count
     }
     
     func getFilterViewModelForCell(index: Int) -> FilterCellViewModel? {
         
         // just a precautionary index check
-        guard index > 0, index < filters.count else {
+        guard index > 0, index < filterModelsArray.count else {
             return nil
         }
+        let model = filterModelsArray[index]
         
-        let filter = FilterModel(titleString: filters[index])
-        let viewModel = FilterCellViewModel(model: filter)
+        let viewModel = FilterCellViewModel(model: model)
+        viewModel.updateStateCallBack = { [weak self] model in
+            self?.filterModelsArray[index] = model
+        }
         return viewModel
+    }
+    
+    func changedSelectionCellAtRow(selection: Bool, index: Int) {
+        self.filterModelsArray[index].isSelected = selection
+    }
+    
+    func viewDismissing() {
+        setSelectedModels?(filterModelsArray)
     }
     
 }

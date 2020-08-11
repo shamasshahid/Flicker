@@ -12,9 +12,11 @@ class FilterTableViewCell: UITableViewCell {
 
     var viewModel: FilterCellViewModel? {
         didSet {
-            viewModel?.stateUpdatedCallBack = { [weak self] in
+            viewModel?.updateViewCallBack = { [weak self] in
                 self?.updateView()
             }
+            setSelected(viewModel?.isSelected() ?? false, animated: true)
+            updateView()
         }
     }
     
@@ -24,14 +26,15 @@ class FilterTableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
+
         super.setSelected(selected, animated: animated)
-        
-        viewModel?.selectionChanged(isSelected: selected)
+        accessoryType = isSelected ? .checkmark : .none
     }
-    
+
     func updateView() {
         textLabel?.text = viewModel?.getFilterLabel()
         accessoryType = (viewModel?.isSelected() ?? false) ? .checkmark : .none
+//        isSelected = viewModel?.isSelected() ?? false
     }
 
 }

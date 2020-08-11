@@ -84,7 +84,7 @@
                     <navigationItem key="navigationItem" id="Oww-sK-Gqc">
                         <barButtonItem key="rightBarButtonItem" title="Filter" id="wC6-LQ-sdl">
                             <connections>
-                                <segue destination="26W-xA-lt1" kind="popoverPresentation" popoverAnchorBarButtonItem="wC6-LQ-sdl" id="KZg-Dd-J3n">
+                                <segue destination="vH8-YA-jq8" kind="popoverPresentation" popoverAnchorBarButtonItem="wC6-LQ-sdl" id="KZg-Dd-J3n">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
@@ -135,13 +135,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="73E-On-PLo"/>
                     </view>
+                    <navigationItem key="navigationItem" id="xl6-sI-jfv"/>
                     <connections>
                         <outlet property="tableview" destination="mG6-d8-8mv" id="JXn-tR-QU3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tg4-aY-gKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1894.2028985507247" y="131.91964285714286"/>
+            <point key="canvasLocation" x="3379.7101449275365" y="131.91964285714286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oFh-tO-5ou">
@@ -160,6 +161,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3O-Xw-wel" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="136.60714285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eft-AI-VEU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vH8-YA-jq8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gmc-fa-XaF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="26W-xA-lt1" kind="relationship" relationship="rootViewController" id="A4N-Gu-zSA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kOb-3i-ijA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2469.5652173913045" y="131.91964285714286"/>
         </scene>
     </scenes>
 </document>

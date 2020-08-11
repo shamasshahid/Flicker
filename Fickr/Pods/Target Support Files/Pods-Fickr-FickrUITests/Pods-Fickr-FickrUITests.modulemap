@@ -1,0 +1,6 @@
+framework module Pods_Fickr_FickrUITests {
+  umbrella header "Pods-Fickr-FickrUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
