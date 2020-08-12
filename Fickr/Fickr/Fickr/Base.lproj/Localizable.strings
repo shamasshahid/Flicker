@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  Fickr
+
+  Created by Shamas on 12/8/20.
+  Copyright © 2020 Shamas. All rights reserved.
+*/
+
+
+"Done" = "Done";
+"Views: %@" = "Views: %@";
+"Views: N/A" = "Views: N/A";
+"Date taken: %@" = "Date taken: %@";
+"Date taken: N/A" = "Date taken: N/A";
+"Date uploaded: %@" = "Date uploaded: %@";
+"Date uploaded: N/A" = "Date uploaded: N/A";
+"Size: %@ x %@" = "Size: %@ x %@";
+"Size: N/A" = "Size: N/A";

@@ -13,25 +13,22 @@ class FilterTableViewCell: UITableViewCell {
     static let reuseIdentifier = "filter_cell"
     
     @IBOutlet weak var filterLabel: UILabel!
+    
     var viewModel: FilterCellViewModel? {
         didSet {
             viewModel?.onFilterStateChanged = { [weak self] in
-                self?.updateView()
+                self?.setAccessoryView(isSelected: self?.viewModel?.isSelected() ?? false)
             }
-            setSelected(viewModel?.isSelected() ?? false, animated: true)
+            
+            //TODO: really need or not?
+//            setSelected(viewModel?.isSelected() ?? false, animated: true)
             updateView()
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-
-        super.setSelected(selected, animated: animated)
-        setAccessoryView(isSelected: selected)
+        
     }
 
     func updateView() {

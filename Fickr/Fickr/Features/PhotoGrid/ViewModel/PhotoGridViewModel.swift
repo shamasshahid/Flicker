@@ -18,13 +18,13 @@ class PhotoGridViewModel {
     
     var locationCoOr: CLLocationCoordinate2D? {
         didSet {
-            makeLocationBasedCall(locationCoOr: locationCoOr)
+            searchForLocation(locationCoOr: locationCoOr)
         }
     }
     
     public var searchString: String? {
         didSet{
-            makeSearchCall(searchString: searchString ?? "")
+            searchForText(searchString: searchString)
         }
     }
     
@@ -42,7 +42,7 @@ class PhotoGridViewModel {
     
     private var filterModels: [FilterObject] = [] {
         didSet {
-            filterCurrentResults()
+            filterPhotos()
         }
     }
     
@@ -50,11 +50,14 @@ class PhotoGridViewModel {
         return filteredPhotoModels.count
     }
     
-    init(apiService: APIService, cLocationManager: LocationService) {
+    init(apiService: APIService, locationManager: LocationService) {
+        
         service = apiService
-        locationManager = cLocationManager
-        locationManager.locationCallbackListener = self
-        locationManager.requestAccess()
+        
+        self.locationManager = locationManager
+        self.locationManager.locationCallbackListener = self
+        
+        self.locationManager.requestAccess()
       }
     
     //TODO: add comments to explain this method
@@ -70,7 +73,7 @@ class PhotoGridViewModel {
     }
     
     
-    private func filterCurrentResults() {
+    private func filterPhotos() {
         
         let selectedFilters = filterModels.filter({ $0.isSelected })
         
@@ -83,7 +86,7 @@ class PhotoGridViewModel {
         }
     }
     
-    private func makeLocationBasedCall(locationCoOr: CLLocationCoordinate2D?) {
+    private func searchForLocation(locationCoOr: CLLocationCoordinate2D?) {
         
         guard let location = locationCoOr else {
             return
@@ -94,13 +97,13 @@ class PhotoGridViewModel {
         }
     }
     
-    private func makeSearchCall(searchString: String) {
+    private func searchForText(searchString: String?) {
         
-        guard !searchString.isEmpty else {
+        guard let searchText = searchString, !searchText.isEmpty else {
             return
         }
         
-        service.fetch(urlRequest: SearchRouter.search(searchString: searchString)) { [weak self] (result) in
+        service.fetch(urlRequest: SearchRouter.search(searchString: searchText)) { [weak self] (result) in
             
             self?.handleFetchedResult(result: result)
         }
@@ -115,12 +118,17 @@ class PhotoGridViewModel {
         }
     }
     
-    func getModelForCellIndex(index: Int) -> PhotoCellViewModel? {
+    func getModelForCellAt(index: Int) -> PhotoCellViewModel? {
         
-        return PhotoCellViewModel(photoModel: filteredPhotoModels[index])
+        guard let object = getModelForIndex(index: index) else {
+            return nil
+        }
+        
+        return PhotoCellViewModel(photoModel: object)
     }
     
-    func getModelForIndex(index: Int) -> PhotoObject? {
+    private func getModelForIndex(index: Int) -> PhotoObject? {
+        
         guard index >= 0 && index < filteredPhotoModels.count else {
             return nil
         }

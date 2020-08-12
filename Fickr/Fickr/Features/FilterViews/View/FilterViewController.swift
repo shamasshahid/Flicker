@@ -10,13 +10,13 @@ import UIKit
 
 class FilterViewController: UIViewController {
     
+    @IBOutlet weak var tableview: UITableView!
+    
     var viewModel: FiltersViewModel!
     
     enum FilerViewStrings: String {
         case done = "Done"
     }
-    
-    @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +26,6 @@ class FilterViewController: UIViewController {
         let doneTitle = NSLocalizedString(FilerViewStrings.done.rawValue, comment: "")
         let barItem = UIBarButtonItem(title: doneTitle, style: .done, target: self, action: #selector(doneButtonTapped))
         navigationItem.rightBarButtonItem = barItem
-        
-        preferredContentSize = CGSize(width: 300, height: 600)
     }
     
     fileprivate func setupTableView() {
@@ -52,15 +50,15 @@ extension FilterViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: FilterTableViewCell.reuseIdentifier, for: indexPath)
+        
         if let filterCell = cell as? FilterTableViewCell {
-            
-            let cellViewModel = viewModel.getFilterViewModelForCell(index: indexPath.row)
+            let cellViewModel = viewModel.getFilterViewModelFor(index: indexPath.row)
             filterCell.viewModel = cellViewModel
             
             if let isSelected = cellViewModel?.isSelected(), isSelected {
-                tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+                tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
             } else {
-                tableView.deselectRow(at: indexPath, animated: false)
+                tableView.deselectRow(at: indexPath, animated: true)
             }
         }
         return cell
@@ -68,15 +66,21 @@ extension FilterViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let cell = tableView.cellForRow(at: indexPath) {
-            viewModel.updateSelectionAtIndex(selection: cell.isSelected, index: indexPath.row)
+        if let cell = tableView.cellForRow(at: indexPath) as? FilterTableViewCell {
+            updateCellForSelection(cell: cell, index: indexPath.row, isSelected: true)
         }
-        
-        tableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
+    func updateCellForSelection(cell: FilterTableViewCell, index: Int, isSelected: Bool) {
+        viewModel.updateSelectionAtIndex(selection: isSelected, index: index)
+        let cellVM = viewModel.getFilterViewModelFor(index: index)
+        cell.viewModel = cellVM
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        viewModel.updateSelectionAtIndex(selection: false, index: indexPath.row)
-        tableView.reloadRows(at: [indexPath], with: .none)
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? FilterTableViewCell {
+            updateCellForSelection(cell: cell, index: indexPath.row, isSelected: false)
+        }
     }
 }

@@ -24,11 +24,10 @@ class PhotoGridViewController: UIViewController {
     }
     
     fileprivate func setupViewModel() {
-        viewModel = PhotoGridViewModel(apiService: repo.getService(), cLocationManager: LocationManager())
+        viewModel = PhotoGridViewModel(apiService: repo.getService(), locationManager: LocationManager())
         viewModel.onDataRefreshed = { [weak self] in
             self?.updateCollectionView()
         }
-        
     }
     
     override func viewDidLoad() {
@@ -36,7 +35,6 @@ class PhotoGridViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         setupViews()
-       
     }
     
     private func setupViews() {
@@ -70,11 +68,8 @@ class PhotoGridViewController: UIViewController {
 extension PhotoGridViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchString = searchBar.text, !searchString.isEmpty else {
-            return
-        }
         searchBar.endEditing(true)
-        viewModel.searchString = searchString
+        viewModel.searchString = searchBar.text
     }
 }
 
@@ -93,7 +88,7 @@ extension PhotoGridViewController: UICollectionViewDataSource, UICollectionViewD
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier, for: indexPath)
         
         if let photoCell = cell as? PhotoCollectionViewCell {
-            photoCell.viewModel = viewModel.getModelForCellIndex(index: indexPath.row)
+            photoCell.viewModel = viewModel.getModelForCellAt(index: indexPath.row)
         }
         
         return cell

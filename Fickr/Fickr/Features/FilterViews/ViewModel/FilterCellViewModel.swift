@@ -26,10 +26,4 @@ class FilterCellViewModel {
     func isSelected() -> Bool {
         return filter.isSelected
     }
-    
-    func selectionChanged(isSelected: Bool) {
-        filter.isSelected = isSelected
-        onFilterStateChanged?()
-    }
-    
 }
