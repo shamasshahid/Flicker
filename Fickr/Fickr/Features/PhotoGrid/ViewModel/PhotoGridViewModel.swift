@@ -12,7 +12,7 @@ import CoreLocation
 class PhotoGridViewModel {
     
     private let service: APIService    
-    private let locationManager: LocationManager
+    private var locationManager: LocationService
     
     var onDataRefreshed: (() -> Void)?
     
@@ -50,9 +50,9 @@ class PhotoGridViewModel {
         return filteredPhotoModels.count
     }
     
-    init(apiService: APIService, cLocationManager: LocationManager) {
-          service = apiService
-          locationManager = cLocationManager
+    init(apiService: APIService, cLocationManager: LocationService) {
+        service = apiService
+        locationManager = cLocationManager
         locationManager.locationCallbackListener = self
         locationManager.requestAccess()
       }

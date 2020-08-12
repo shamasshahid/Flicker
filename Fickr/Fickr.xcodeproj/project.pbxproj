@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0606569A24E37747004D5A28 /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0606569924E37747004D5A28 /* DetailViewModelTests.swift */; };
-		060656A224E3A54A004D5A28 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 060656A024E3A54A004D5A28 /* Localizable.strings */; };
+		060656A624E3B235004D5A28 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060656A524E3B235004D5A28 /* LocationService.swift */; };
+		060656AF24E3B358004D5A28 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 060656AC24E3B358004D5A28 /* Localizable.strings */; };
+		060656B124E3B3F7004D5A28 /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060656B024E3B3F7004D5A28 /* MockLocationService.swift */; };
 		061EAFA124E0C23D00E18460 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFA024E0C23D00E18460 /* AppDelegate.swift */; };
 		061EAFA324E0C23D00E18460 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFA224E0C23D00E18460 /* SceneDelegate.swift */; };
 		061EAFA524E0C23D00E18460 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFA424E0C23D00E18460 /* PhotoGridViewController.swift */; };
@@ -62,8 +64,10 @@
 
 /* Begin PBXFileReference section */
 		0606569924E37747004D5A28 /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
-		060656A124E3A54A004D5A28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Fickr/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		060656A324E3A57A004D5A28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Fickr/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		060656A524E3B235004D5A28 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		060656AD24E3B358004D5A28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		060656AE24E3B358004D5A28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		060656B024E3B3F7004D5A28 /* MockLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationService.swift; sourceTree = "<group>"; };
 		061EAF9D24E0C23D00E18460 /* Fickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		061EAFA024E0C23D00E18460 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		061EAFA224E0C23D00E18460 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,10 +146,19 @@
 		060656A424E3B128004D5A28 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				060656A024E3A54A004D5A28 /* Localizable.strings */,
+				060656AB24E3B358004D5A28 /* Fickr */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
+		};
+		060656AB24E3B358004D5A28 /* Fickr */ = {
+			isa = PBXGroup;
+			children = (
+				060656AC24E3B358004D5A28 /* Localizable.strings */,
+			);
+			name = Fickr;
+			path = Fickr/Fickr;
+			sourceTree = SOURCE_ROOT;
 		};
 		061EAF9424E0C23D00E18460 = {
 			isa = PBXGroup;
@@ -196,6 +209,7 @@
 				061EAFB924E0C24000E18460 /* Info.plist */,
 				0699725B24E3635000A4E187 /* MockAPIService.swift */,
 				0606569924E37747004D5A28 /* DetailViewModelTests.swift */,
+				060656B024E3B3F7004D5A28 /* MockLocationService.swift */,
 			);
 			path = FickrTests;
 			sourceTree = "<group>";
@@ -325,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				06DD620924E2CB04005AA3CD /* LocationManager.swift */,
+				060656A524E3B235004D5A28 /* LocationService.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -470,7 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				061EAFAD24E0C23F00E18460 /* LaunchScreen.storyboard in Resources */,
-				060656A224E3A54A004D5A28 /* Localizable.strings in Resources */,
+				060656AF24E3B358004D5A28 /* Localizable.strings in Resources */,
 				061EAFAA24E0C23F00E18460 /* Assets.xcassets in Resources */,
 				061EAFA824E0C23D00E18460 /* Main.storyboard in Resources */,
 			);
@@ -604,6 +619,7 @@
 				061EAFDD24E0E10500E18460 /* PhotoObject.swift in Sources */,
 				0639ECB224E179AA0066EACD /* FiltersViewModel.swift in Sources */,
 				06C50D6A24E1299700523054 /* PhotoCellViewModel.swift in Sources */,
+				060656A624E3B235004D5A28 /* LocationService.swift in Sources */,
 				0682558E24E21B9C005833BA /* FilterObject.swift in Sources */,
 				061EAFA524E0C23D00E18460 /* PhotoGridViewController.swift in Sources */,
 				061EAFA124E0C23D00E18460 /* AppDelegate.swift in Sources */,
@@ -630,6 +646,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				060656B124E3B3F7004D5A28 /* MockLocationService.swift in Sources */,
 				0699725C24E3635000A4E187 /* MockAPIService.swift in Sources */,
 				061EAFB824E0C24000E18460 /* FickrTests.swift in Sources */,
 				0606569A24E37747004D5A28 /* DetailViewModelTests.swift in Sources */,
@@ -660,11 +677,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		060656A024E3A54A004D5A28 /* Localizable.strings */ = {
+		060656AC24E3B358004D5A28 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				060656A124E3A54A004D5A28 /* Base */,
-				060656A324E3A57A004D5A28 /* en */,
+				060656AD24E3B358004D5A28 /* en */,
+				060656AE24E3B358004D5A28 /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

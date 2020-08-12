@@ -34,7 +34,7 @@ enum LocationAccessRequestStatus {
     case serviceDisabled
 }
 
-class LocationManager: NSObject {
+class LocationManager: NSObject, LocationService {
     
     private let locationManager = CLLocationManager()
     weak var locationCallbackListener: LocationCallbackListener?

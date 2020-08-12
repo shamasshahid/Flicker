@@ -11,25 +11,27 @@ import XCTest
 
 class FickrTests: XCTestCase {
 
+    var viewModel: PhotoGridViewModel!
     
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        viewModel = PhotoGridViewModel(apiService: MockAPIService(), cLocationManager: MockLocationService())
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
+        viewModel = nil
     }
     
     func testAPI() throws {
         
-        let viewModel = PhotoGridViewModel(apiService: MockAPIService(), cLocationManager: LocationManager())
-        let expectation = self.expectation(description: "Data Fetching")
+        let searchExpectation = XCTestExpectation(description: "Request Fetching")
         viewModel.onDataRefreshed = {
             
-            expectation.fulfill()
+            searchExpectation.fulfill()
         }
         viewModel.searchString = "testString"
-        waitForExpectations(timeout: 5, handler: nil)
+        wait(for: [searchExpectation], timeout: 15)
         XCTAssertEqual(viewModel.rowCount, 4)
         
         let cellViewModel = viewModel.getModelForIndex(index: 0)
@@ -40,6 +42,20 @@ class FickrTests: XCTestCase {
         
         let detailViewModel = viewModel.getDetailViewModelForIndex(index: 0)
         XCTAssertNotNil(detailViewModel, "detailViewModel should not be nil")
+    }
+    
+    func testViewModelLocation() throws {
+        
+        let expecation = XCTestExpectation(description: "Location Fetching")
+//        let locationExpectation = self.expectation(description: "Location Fetching")
+        viewModel.onDataRefreshed = {
+            
+            expecation.fulfill()
+        }
+        
+        wait(for: [expecation], timeout: 30)
+
+        
     }
     
 }
