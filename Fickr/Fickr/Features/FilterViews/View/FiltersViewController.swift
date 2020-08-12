@@ -8,9 +8,7 @@
 
 import UIKit
 
-//TODO: remove navigation controller and add action buttons on view itself
-//TODO: change class name to FiltersViewController to match with VM
-class FilterViewController: UIViewController {
+class FiltersViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -25,9 +23,6 @@ class FilterViewController: UIViewController {
 
         setupTableView()
         
-        let doneTitle = NSLocalizedString(FilerViewStrings.done.rawValue, comment: "")
-        let barItem = UIBarButtonItem(title: doneTitle, style: .done, target: self, action: #selector(doneButtonTapped))
-        navigationItem.rightBarButtonItem = barItem
     }
     
     fileprivate func setupTableView() {
@@ -37,13 +32,13 @@ class FilterViewController: UIViewController {
         tableview.allowsSelectionDuringEditing = true
     }
     
-    @objc func doneButtonTapped() {
-        self.presentingViewController?.dismiss(animated: true
-            , completion: nil)
+    @IBAction func doneButtonTapped(_ sender: UIButton) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    
 }
 
-extension FilterViewController: UITableViewDataSource, UITableViewDelegate {
+extension FiltersViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.rowCount
@@ -72,7 +67,20 @@ extension FilterViewController: UITableViewDataSource, UITableViewDelegate {
             updateCellForSelection(cell: cell, index: indexPath.row, isSelected: true)
         }
     }
-    //TODO: add comments
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? FilterTableViewCell {
+            updateCellForSelection(cell: cell, index: indexPath.row, isSelected: false)
+        }
+    }
+    
+    
+    /// Updates the given cell when its selection state is changed
+    /// - Parameters:
+    ///   - cell: FilterTableViewCell
+    ///   - index: Index
+    ///   - isSelected: selection state
     func updateCellForSelection(cell: FilterTableViewCell, index: Int, isSelected: Bool) {
         
         viewModel.updateSelectionAtIndex(selection: isSelected, index: index)
@@ -81,10 +89,4 @@ extension FilterViewController: UITableViewDataSource, UITableViewDelegate {
         cell.viewModel = cellVM
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
-        if let cell = tableView.cellForRow(at: indexPath) as? FilterTableViewCell {
-            updateCellForSelection(cell: cell, index: indexPath.row, isSelected: false)
-        }
-    }
 }

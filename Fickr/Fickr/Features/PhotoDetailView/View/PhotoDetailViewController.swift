@@ -9,7 +9,6 @@
 import UIKit
 import SDWebImage
 
-//TODO: remove navigation controller and add action buttons on view itself
 class PhotoDetailViewController: UIViewController {
 
     @IBOutlet weak var photoImageView: UIImageView!
@@ -25,20 +24,12 @@ class PhotoDetailViewController: UIViewController {
     
     var viewModel: PhotoDetailViewModel!
     
-    fileprivate func setupNavigation() {
-        let closeTitle = NSLocalizedString(PhotoDetailStrings.close.rawValue, comment: "")
-        let barItem = UIBarButtonItem(title: closeTitle, style: .done, target: self, action: #selector(closeButtonTapped))
-        navigationItem.leftBarButtonItem = barItem
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateLabels()
-        //TODO: move to storyboard
         photoImageView.contentMode = .scaleAspectFit
         
-        setupNavigation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,9 +37,9 @@ class PhotoDetailViewController: UIViewController {
         setupImageView()
     }
     
-    @objc func closeButtonTapped() {
-        self.presentingViewController?.dismiss(animated: true
-            , completion: nil)
+    @IBAction func closeButtonTapped(_ sender: UIButton) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+
     }
     
     fileprivate func updateLabels() {

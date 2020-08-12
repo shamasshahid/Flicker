@@ -46,19 +46,19 @@ class PhotoGridViewController: UIViewController {
     
     private func updateCollectionView() {
         DispatchQueue.main.async { [weak self] in
+            self?.collectionView.contentOffset = CGPoint.zero
             self?.collectionView.reloadData()
         }
     }
     ///Preparing viewModels for navigating to either Filter selection screen OR PhotoDetail view from tapping onto thumbnail
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Create and assign the viewmodel
-        let viewController = (segue.destination as? UINavigationController)?.viewControllers.first
         
-        if let destination = viewController as? FilterViewController {
+        if let destination = segue.destination as? FiltersViewController {
 
             destination.viewModel = viewModel.getFiltersVM()
             
-        } else if let destination = viewController as? PhotoDetailViewController,
+        } else if let destination = segue.destination as? PhotoDetailViewController,
             let indexPath = sender as? IndexPath {
             
             destination.viewModel = viewModel.getDetailViewModelForIndex(index: indexPath.row)

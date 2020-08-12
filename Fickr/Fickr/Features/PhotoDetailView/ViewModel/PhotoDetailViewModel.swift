@@ -10,6 +10,8 @@ import Foundation
 
 class PhotoDetailViewModel {
     
+    private let dateFormat = "yyyy-MM-dd HH:mm:ss"
+    
     private let photoModel: PhotoObject
     private let dateFormatter = DateFormatter()
     
@@ -39,7 +41,6 @@ class PhotoDetailViewModel {
     
     var numberOfViewsText: String {
         if let views = photoModel.views {
-            //TODO: check localizedString arguments
             return String(format: NSLocalizedString(PhotoDetailStrings.viewNumber.rawValue, comment: ""), "\(views)")
         } else {
             return NSLocalizedString(PhotoDetailStrings.viewNotAvailable.rawValue, comment: "")
@@ -55,8 +56,8 @@ class PhotoDetailViewModel {
     }
     
     private func getDateStringFromString(dateString: String) -> String? {
-        //TODO: move format as constant
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        dateFormatter.dateFormat = dateFormat
         if let date = dateFormatter.date(from: dateString) {
             dateFormatter.dateStyle = .medium
             return dateFormatter.string(from: date)

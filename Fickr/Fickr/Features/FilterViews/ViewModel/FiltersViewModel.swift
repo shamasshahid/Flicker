@@ -22,7 +22,10 @@ class FiltersViewModel {
         return filtersArray.count
     }
     
-    ///TODO: documentation
+    
+    /// Creates and returns FilterCellViewModel object for the index
+    /// - Parameter index: Index
+    /// - Returns: FilterCellViewModel
     func getFilterViewModelFor(index: Int) -> FilterCellViewModel? {
         
         // just a precautionary index check

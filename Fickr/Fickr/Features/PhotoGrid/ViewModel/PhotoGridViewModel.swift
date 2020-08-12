@@ -107,7 +107,7 @@ class PhotoGridViewModel {
     
     private func searchForText(searchString: String?) {
         
-        guard let searchText = searchString, !searchText.isEmpty else {
+        guard let searchText = searchString, !searchText.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }
         
@@ -123,7 +123,6 @@ class PhotoGridViewModel {
         case .failure(let error):
             print(error)
         }
-        //TODO: add case unknown?
     }
     
     

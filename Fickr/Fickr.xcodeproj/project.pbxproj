@@ -26,7 +26,7 @@
 		061EAFE424E1095F00E18460 /* SearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFE324E1095F00E18460 /* SearchResponseModel.swift */; };
 		061EAFE624E10B4A00E18460 /* PhotoGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFE524E10B4A00E18460 /* PhotoGridViewModel.swift */; };
 		061EAFE824E1101D00E18460 /* PhotosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFE724E1101D00E18460 /* PhotosRepository.swift */; };
-		0639ECAE24E1784F0066EACD /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639ECAD24E1784F0066EACD /* FilterViewController.swift */; };
+		0639ECAE24E1784F0066EACD /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639ECAD24E1784F0066EACD /* FiltersViewController.swift */; };
 		0639ECB024E179610066EACD /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639ECAF24E179610066EACD /* FilterTableViewCell.swift */; };
 		0639ECB224E179AA0066EACD /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639ECB124E179AA0066EACD /* FiltersViewModel.swift */; };
 		0680458E24E12566002319A6 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680458D24E12566002319A6 /* PhotoCollectionViewCell.swift */; };
@@ -80,7 +80,7 @@
 		061EAFE324E1095F00E18460 /* SearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseModel.swift; sourceTree = "<group>"; };
 		061EAFE524E10B4A00E18460 /* PhotoGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewModel.swift; sourceTree = "<group>"; };
 		061EAFE724E1101D00E18460 /* PhotosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRepository.swift; sourceTree = "<group>"; };
-		0639ECAD24E1784F0066EACD /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		0639ECAD24E1784F0066EACD /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		0639ECAF24E179610066EACD /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		0639ECB124E179AA0066EACD /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
 		064589EF24E41BCE002C141B /* FlickrApp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FlickrApp.xcconfig; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				0639ECAF24E179610066EACD /* FilterTableViewCell.swift */,
-				0639ECAD24E1784F0066EACD /* FilterViewController.swift */,
+				0639ECAD24E1784F0066EACD /* FiltersViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -575,7 +575,7 @@
 				061EAFE124E0FCDC00E18460 /* SearchRouter.swift in Sources */,
 				0680458E24E12566002319A6 /* PhotoCollectionViewCell.swift in Sources */,
 				06E6178324E27AEB001C9353 /* AppConfig.swift in Sources */,
-				0639ECAE24E1784F0066EACD /* FilterViewController.swift in Sources */,
+				0639ECAE24E1784F0066EACD /* FiltersViewController.swift in Sources */,
 				061EAFDF24E0FCB100E18460 /* SearchService.swift in Sources */,
 				061EAFE624E10B4A00E18460 /* PhotoGridViewModel.swift in Sources */,
 				061EAFE424E1095F00E18460 /* SearchResponseModel.swift in Sources */,
