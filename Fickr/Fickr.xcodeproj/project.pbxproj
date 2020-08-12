@@ -72,7 +72,6 @@
 		061EAFB324E0C24000E18460 /* FickrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FickrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		061EAFB724E0C24000E18460 /* PhotoGridViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewModelTest.swift; sourceTree = "<group>"; };
 		061EAFB924E0C24000E18460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfiguration.xcconfig; sourceTree = "<group>"; };
 		061EAFD724E0D06100E18460 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		061EAFD924E0D07100E18460 /* APIRoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoutable.swift; sourceTree = "<group>"; };
 		061EAFDC24E0E10500E18460 /* PhotoObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoObject.swift; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		0639ECAD24E1784F0066EACD /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		0639ECAF24E179610066EACD /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		0639ECB124E179AA0066EACD /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
+		064589EF24E41BCE002C141B /* FlickrApp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FlickrApp.xcconfig; sourceTree = "<group>"; };
 		0680458D24E12566002319A6 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		0682558D24E21B9C005833BA /* FilterObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterObject.swift; sourceTree = "<group>"; };
 		0682558F24E21C4B005833BA /* FilterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellViewModel.swift; sourceTree = "<group>"; };
@@ -187,11 +187,11 @@
 			isa = PBXGroup;
 			children = (
 				061EAFB724E0C24000E18460 /* PhotoGridViewModelTest.swift */,
-				0699725B24E3635000A4E187 /* MockAPIService.swift */,
 				0606569924E37747004D5A28 /* DetailViewModelTests.swift */,
-				060656B024E3B3F7004D5A28 /* MockLocationService.swift */,
 				06B5B7DF24E3FC9F0062DA65 /* FilterCellViewModelTest.swift */,
 				06B5B7E124E3FDF30062DA65 /* FiltersViewModelTest.swift */,
+				060656B024E3B3F7004D5A28 /* MockLocationService.swift */,
+				0699725B24E3635000A4E187 /* MockAPIService.swift */,
 				0699726624E3649F00A4E187 /* dummy.json */,
 				061EAFB924E0C24000E18460 /* Info.plist */,
 			);
@@ -201,7 +201,7 @@
 		061EAFD024E0C33600E18460 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */,
+				064589EF24E41BCE002C141B /* FlickrApp.xcconfig */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -600,7 +600,7 @@
 /* Begin XCBuildConfiguration section */
 		061EAFC524E0C24000E18460 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */;
+			baseConfigurationReference = 064589EF24E41BCE002C141B /* FlickrApp.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -661,6 +661,7 @@
 		};
 		061EAFC624E0C24000E18460 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 064589EF24E41BCE002C141B /* FlickrApp.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
