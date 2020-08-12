@@ -34,9 +34,6 @@ class PhotoGridViewModelTest: XCTestCase {
         wait(for: [searchExpectation], timeout: 15)
         XCTAssertEqual(viewModel.rowCount, 4)
         
-        let cellViewModel = viewModel.getModelForIndex(index: 0)
-        XCTAssertNotNil(cellViewModel, "Cell view Model should not be nil")
-        
         let filterViewModel = viewModel.getFiltersVM()
         XCTAssertNotNil(filterViewModel, "filterViewModel should not be nil")
         

@@ -60,29 +60,35 @@ class PhotoGridViewModel {
         self.locationManager.requestAccess()
       }
     
-    //TODO: add comments to explain this method
+    // Creating Filter objects from all the tags
     private func generateFilterModels() {
         var allTags = Set<String>()
         
+        // Getting all the tags, and putting in a Set, to avoid duplicates
         for aPhoto in photoModels {
             allTags = allTags.union(aPhoto.separatedTags)
         }
+        // sometimes Flickr's tags are not equi spaced, so removing
         allTags.remove("")
+        
+        // Sorting them in an array, otherwise they might appear a bit undeterministically
         filterModels = allTags.map({ FilterObject(titleString: $0) }).sorted(by: { (m1, m2) -> Bool in
             return m1.title < m2.title
         })
     }
     
-    
+    // Filtering photos based on the selected filters
     private func filterPhotos() {
         
         let selectedFilters = filterModels.filter({ $0.isSelected })
-        
+        // return all photos if no selected filters
         if selectedFilters.isEmpty {
             filteredPhotoModels = photoModels
         } else {
             let filterMap = selectedFilters.map({ $0.title })
-            //TODO: add comment to explain logic
+            
+            // going through all the PhotoObjects, and checking if intersection between its tags
+            // and selected filterModels, is empty or not. If it's not empty, then it should filter in
             filteredPhotoModels = photoModels.filter({ !(Set($0.separatedTags).intersection(Set(filterMap))).isEmpty })
         }
     }
@@ -119,6 +125,10 @@ class PhotoGridViewModel {
         }
     }
     
+    
+    /// Create and return PhotoCellViewModel for the Index
+    /// - Parameter index: Index for the Photo
+    /// - Returns: PhotoCellViewModel
     func getModelForCellAt(index: Int) -> PhotoCellViewModel? {
         
         guard let object = getModelForIndex(index: index) else {
@@ -128,7 +138,8 @@ class PhotoGridViewModel {
         return PhotoCellViewModel(photoModel: object)
     }
     
-    func getModelForIndex(index: Int) -> PhotoObject? {
+    
+    private func getModelForIndex(index: Int) -> PhotoObject? {
         
         guard index >= 0 && index < filteredPhotoModels.count else {
             return nil
@@ -136,7 +147,10 @@ class PhotoGridViewModel {
         return filteredPhotoModels[index]
     }
     
-    func getFiltersVM() -> FiltersViewModel? {
+    
+    /// Creates and returns FiltersViewModel object
+    /// - Returns: FiltersViewModel
+    func getFiltersVM() -> FiltersViewModel {
         
         let viewModel = FiltersViewModel(allFilters: filterModels)
         viewModel.onFiltersUpdated = { [weak self] selectedFilters in
@@ -145,6 +159,10 @@ class PhotoGridViewModel {
         return viewModel
     }
     
+    
+    /// Create and returns PhotoDetailViewModel for selected Photo
+    /// - Parameter index: Index
+    /// - Returns: PhotoDetailViewModel
     func getDetailViewModelForIndex(index: Int) -> PhotoDetailViewModel? {
         guard let model = getModelForIndex(index: index) else {
             return nil
@@ -156,7 +174,6 @@ class PhotoGridViewModel {
 extension PhotoGridViewModel: LocationCallbackListener {
     
     func userLocationObtained(coordinates: CLLocationCoordinate2D) {
-        print("fetched location is \(coordinates)")
         locationCoOr = coordinates
         locationManager.stopUpdatingLocation()
     }
@@ -166,7 +183,6 @@ extension PhotoGridViewModel: LocationCallbackListener {
     }
     
     func locationPermissionGranted(status: CLAuthorizationStatus) {
-        print("permission granted")
         locationManager.startUpdatingLocation()
     }
 }
