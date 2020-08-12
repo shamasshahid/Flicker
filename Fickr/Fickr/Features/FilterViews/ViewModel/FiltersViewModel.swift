@@ -25,7 +25,7 @@ class FiltersViewModel {
     func getFilterViewModelFor(index: Int) -> FilterCellViewModel? {
         
         // just a precautionary index check
-        guard index > 0, index < filtersArray.count else {
+        guard index >= 0, index < filtersArray.count else {
             return nil
         }
         

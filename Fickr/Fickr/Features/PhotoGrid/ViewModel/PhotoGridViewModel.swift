@@ -67,6 +67,7 @@ class PhotoGridViewModel {
         for aPhoto in photoModels {
             allTags = allTags.union(aPhoto.separatedTags)
         }
+        allTags.remove("")
         filterModels = allTags.map({ FilterObject(titleString: $0) }).sorted(by: { (m1, m2) -> Bool in
             return m1.title < m2.title
         })
