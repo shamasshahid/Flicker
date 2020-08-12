@@ -9,13 +9,13 @@
 import XCTest
 @testable import Fickr
 
-class FickrTests: XCTestCase {
+class PhotoGridViewModelTest: XCTestCase {
 
     var viewModel: PhotoGridViewModel!
     
     override func setUpWithError() throws {
         
-        viewModel = PhotoGridViewModel(apiService: MockAPIService(), cLocationManager: MockLocationService())
+        viewModel = PhotoGridViewModel(apiService: MockAPIService(), locationManager: MockLocationService())
     }
 
     override func tearDownWithError() throws {

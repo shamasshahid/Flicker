@@ -11,6 +11,10 @@ import SDWebImage
 
 class PhotoDetailViewController: UIViewController {
 
+    enum PhotoDetailStrings: String {
+        case close = "Close"
+    }
+    
     var viewModel: PhotoDetailViewModel!
     
     @IBOutlet weak var photoImageView: UIImageView!
@@ -19,12 +23,21 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet weak var dateUploadedLabel: UILabel!
     @IBOutlet weak var originalDimensionsLabel: UILabel!
     @IBOutlet weak var numberOfViewsLabel: UILabel!
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateLabels()
+        photoImageView.contentMode = .scaleAspectFit
+        
+        let closeTitle = NSLocalizedString(PhotoDetailStrings.close.rawValue, comment: "")
+        let barItem = UIBarButtonItem(title: closeTitle, style: .done, target: self, action: #selector(closeButtonTapped))
+        navigationItem.leftBarButtonItem = barItem
+    }
+    
+    @objc func closeButtonTapped() {
+        self.presentingViewController?.dismiss(animated: true
+            , completion: nil)
     }
     
     fileprivate func updateLabels() {
@@ -33,6 +46,7 @@ class PhotoDetailViewController: UIViewController {
         dateTakenLabel.text = viewModel.dateTakenText
         dateUploadedLabel.text = viewModel.dateUploadedText
         titleLabel.text = viewModel.title
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,16 +55,6 @@ class PhotoDetailViewController: UIViewController {
     }
     
     func setupImageView() {
-        let maxAvailableHeight = view.frame.height - photoImageView.frame.origin.y - view.safeAreaInsets.bottom
-        photoImageView.sd_setImage(with: viewModel.originalURL, placeholderImage: #imageLiteral(resourceName: "placeholder")) {[weak self] (downloadedImage, _, _, _) in
-            self?.photoImageView.contentMode = .scaleAspectFit
-            guard let image = downloadedImage, let imageView = self?.photoImageView, let constaint = self?.heightConstraint else {
-                return
-            }
-            let ratio = image.size.width / image.size.height
-            let newHeight = imageView.frame.width / ratio
-            constaint.constant = min(newHeight, maxAvailableHeight)
-            self?.view.layoutIfNeeded()
-        }
+        photoImageView.sd_setImage(with: viewModel.originalURL, placeholderImage: #imageLiteral(resourceName: "placeholder"))
     }
 }

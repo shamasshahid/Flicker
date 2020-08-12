@@ -127,7 +127,7 @@ class PhotoGridViewModel {
         return PhotoCellViewModel(photoModel: object)
     }
     
-    private func getModelForIndex(index: Int) -> PhotoObject? {
+    func getModelForIndex(index: Int) -> PhotoObject? {
         
         guard index >= 0 && index < filteredPhotoModels.count else {
             return nil

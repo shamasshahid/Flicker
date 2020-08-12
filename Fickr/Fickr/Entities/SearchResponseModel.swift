@@ -15,8 +15,16 @@ struct SearchResponseModel: Codable {
 struct PhotosResponse: Codable {
     let page: Int
     let pages: Int
-    let perpage: Int
+    let perPage: Int
     let total: String
     let photo: [PhotoObject]
+    
+    enum CodingKeys: String, CodingKey {
+        case page
+        case pages
+        case perPage = "perpage"
+        case total
+        case photo
+    }
 }
 

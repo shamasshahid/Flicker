@@ -17,8 +17,7 @@
 		061EAFA824E0C23D00E18460 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061EAFA624E0C23D00E18460 /* Main.storyboard */; };
 		061EAFAA24E0C23F00E18460 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 061EAFA924E0C23F00E18460 /* Assets.xcassets */; };
 		061EAFAD24E0C23F00E18460 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061EAFAB24E0C23F00E18460 /* LaunchScreen.storyboard */; };
-		061EAFB824E0C24000E18460 /* FickrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFB724E0C24000E18460 /* FickrTests.swift */; };
-		061EAFC324E0C24000E18460 /* FickrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFC224E0C24000E18460 /* FickrUITests.swift */; };
+		061EAFB824E0C24000E18460 /* PhotoGridViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFB724E0C24000E18460 /* PhotoGridViewModelTest.swift */; };
 		061EAFD824E0D06100E18460 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFD724E0D06100E18460 /* APIService.swift */; };
 		061EAFDA24E0D07100E18460 /* APIRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFD924E0D07100E18460 /* APIRoutable.swift */; };
 		061EAFDD24E0E10500E18460 /* PhotoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061EAFDC24E0E10500E18460 /* PhotoObject.swift */; };
@@ -37,23 +36,17 @@
 		0682559524E25ACE005833BA /* PhotoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682559424E25ACE005833BA /* PhotoDetailViewModel.swift */; };
 		0699725C24E3635000A4E187 /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699725B24E3635000A4E187 /* MockAPIService.swift */; };
 		0699726724E3649F00A4E187 /* dummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 0699726624E3649F00A4E187 /* dummy.json */; };
+		06B5B7E024E3FC9F0062DA65 /* FilterCellViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5B7DF24E3FC9F0062DA65 /* FilterCellViewModelTest.swift */; };
+		06B5B7E224E3FDF30062DA65 /* FiltersViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5B7E124E3FDF30062DA65 /* FiltersViewModelTest.swift */; };
 		06C50D6A24E1299700523054 /* PhotoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C50D6924E1299700523054 /* PhotoCellViewModel.swift */; };
 		06DD620A24E2CB04005AA3CD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DD620924E2CB04005AA3CD /* LocationManager.swift */; };
 		06E6178324E27AEB001C9353 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E6178224E27AEA001C9353 /* AppConfig.swift */; };
 		24C3E54D0637B48A2E0C8AB8 /* Pods_Fickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F420D126A2A6762F6FB443 /* Pods_Fickr.framework */; };
 		6258444766BEE1525408F466 /* Pods_FickrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 275399DFDC3E95A541790F30 /* Pods_FickrTests.framework */; };
-		7528CCF2072CF5DD6134B706 /* Pods_Fickr_FickrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B83C0A1AB8FC89D92D7449 /* Pods_Fickr_FickrUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		061EAFB424E0C24000E18460 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 061EAF9524E0C23D00E18460 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 061EAF9C24E0C23D00E18460;
-			remoteInfo = Fickr;
-		};
-		061EAFBF24E0C24000E18460 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 061EAF9524E0C23D00E18460 /* Project object */;
 			proxyType = 1;
@@ -77,11 +70,8 @@
 		061EAFAC24E0C23F00E18460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		061EAFAE24E0C23F00E18460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		061EAFB324E0C24000E18460 /* FickrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FickrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		061EAFB724E0C24000E18460 /* FickrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FickrTests.swift; sourceTree = "<group>"; };
+		061EAFB724E0C24000E18460 /* PhotoGridViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewModelTest.swift; sourceTree = "<group>"; };
 		061EAFB924E0C24000E18460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		061EAFBE24E0C24000E18460 /* FickrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FickrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		061EAFC224E0C24000E18460 /* FickrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FickrUITests.swift; sourceTree = "<group>"; };
-		061EAFC424E0C24000E18460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		061EAFD124E0C34C00E18460 /* AppConfiguration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfiguration.xcconfig; sourceTree = "<group>"; };
 		061EAFD724E0D06100E18460 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		061EAFD924E0D07100E18460 /* APIRoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoutable.swift; sourceTree = "<group>"; };
@@ -101,6 +91,8 @@
 		0682559424E25ACE005833BA /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
 		0699725B24E3635000A4E187 /* MockAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIService.swift; sourceTree = "<group>"; };
 		0699726624E3649F00A4E187 /* dummy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dummy.json; sourceTree = "<group>"; };
+		06B5B7DF24E3FC9F0062DA65 /* FilterCellViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellViewModelTest.swift; sourceTree = "<group>"; };
+		06B5B7E124E3FDF30062DA65 /* FiltersViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModelTest.swift; sourceTree = "<group>"; };
 		06C50D6924E1299700523054 /* PhotoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellViewModel.swift; sourceTree = "<group>"; };
 		06DD620924E2CB04005AA3CD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		06E6178224E27AEA001C9353 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
@@ -132,14 +124,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		061EAFBB24E0C24000E18460 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7528CCF2072CF5DD6134B706 /* Pods_Fickr_FickrUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -165,7 +149,6 @@
 			children = (
 				061EAF9F24E0C23D00E18460 /* Fickr */,
 				061EAFB624E0C24000E18460 /* FickrTests */,
-				061EAFC124E0C24000E18460 /* FickrUITests */,
 				061EAF9E24E0C23D00E18460 /* Products */,
 				F9BDA17DEE045CDAA31AC321 /* Pods */,
 				0AEEED80D6634AA079D5D626 /* Frameworks */,
@@ -177,7 +160,6 @@
 			children = (
 				061EAF9D24E0C23D00E18460 /* Fickr.app */,
 				061EAFB324E0C24000E18460 /* FickrTests.xctest */,
-				061EAFBE24E0C24000E18460 /* FickrUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,23 +186,16 @@
 		061EAFB624E0C24000E18460 /* FickrTests */ = {
 			isa = PBXGroup;
 			children = (
-				0699726624E3649F00A4E187 /* dummy.json */,
-				061EAFB724E0C24000E18460 /* FickrTests.swift */,
-				061EAFB924E0C24000E18460 /* Info.plist */,
+				061EAFB724E0C24000E18460 /* PhotoGridViewModelTest.swift */,
 				0699725B24E3635000A4E187 /* MockAPIService.swift */,
 				0606569924E37747004D5A28 /* DetailViewModelTests.swift */,
 				060656B024E3B3F7004D5A28 /* MockLocationService.swift */,
+				06B5B7DF24E3FC9F0062DA65 /* FilterCellViewModelTest.swift */,
+				06B5B7E124E3FDF30062DA65 /* FiltersViewModelTest.swift */,
+				0699726624E3649F00A4E187 /* dummy.json */,
+				061EAFB924E0C24000E18460 /* Info.plist */,
 			);
 			path = FickrTests;
-			sourceTree = "<group>";
-		};
-		061EAFC124E0C24000E18460 /* FickrUITests */ = {
-			isa = PBXGroup;
-			children = (
-				061EAFC224E0C24000E18460 /* FickrUITests.swift */,
-				061EAFC424E0C24000E18460 /* Info.plist */,
-			);
-			path = FickrUITests;
 			sourceTree = "<group>";
 		};
 		061EAFD024E0C33600E18460 /* Configs */ = {
@@ -416,26 +391,6 @@
 			productReference = 061EAFB324E0C24000E18460 /* FickrTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		061EAFBD24E0C24000E18460 /* FickrUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 061EAFCD24E0C24000E18460 /* Build configuration list for PBXNativeTarget "FickrUITests" */;
-			buildPhases = (
-				718D55E8FA5979BF86966389 /* [CP] Check Pods Manifest.lock */,
-				061EAFBA24E0C24000E18460 /* Sources */,
-				061EAFBB24E0C24000E18460 /* Frameworks */,
-				061EAFBC24E0C24000E18460 /* Resources */,
-				4A9EC308590206F7E18CE65D /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				061EAFC024E0C24000E18460 /* PBXTargetDependency */,
-			);
-			name = FickrUITests;
-			productName = FickrUITests;
-			productReference = 061EAFBE24E0C24000E18460 /* FickrUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -450,10 +405,6 @@
 						CreatedOnToolsVersion = 11.6;
 					};
 					061EAFB224E0C24000E18460 = {
-						CreatedOnToolsVersion = 11.6;
-						TestTargetID = 061EAF9C24E0C23D00E18460;
-					};
-					061EAFBD24E0C24000E18460 = {
 						CreatedOnToolsVersion = 11.6;
 						TestTargetID = 061EAF9C24E0C23D00E18460;
 					};
@@ -474,7 +425,6 @@
 			targets = (
 				061EAF9C24E0C23D00E18460 /* Fickr */,
 				061EAFB224E0C24000E18460 /* FickrTests */,
-				061EAFBD24E0C24000E18460 /* FickrUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -499,33 +449,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		061EAFBC24E0C24000E18460 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4A9EC308590206F7E18CE65D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fickr-FickrUITests/Pods-Fickr-FickrUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fickr-FickrUITests/Pods-Fickr-FickrUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fickr-FickrUITests/Pods-Fickr-FickrUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		64E631EBBDB659504A6839E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -542,28 +468,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-FickrTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		718D55E8FA5979BF86966389 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Fickr-FickrUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -648,16 +552,10 @@
 			files = (
 				060656B124E3B3F7004D5A28 /* MockLocationService.swift in Sources */,
 				0699725C24E3635000A4E187 /* MockAPIService.swift in Sources */,
-				061EAFB824E0C24000E18460 /* FickrTests.swift in Sources */,
+				06B5B7E224E3FDF30062DA65 /* FiltersViewModelTest.swift in Sources */,
+				061EAFB824E0C24000E18460 /* PhotoGridViewModelTest.swift in Sources */,
+				06B5B7E024E3FC9F0062DA65 /* FilterCellViewModelTest.swift in Sources */,
 				0606569A24E37747004D5A28 /* DetailViewModelTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		061EAFBA24E0C24000E18460 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				061EAFC324E0C24000E18460 /* FickrUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,11 +566,6 @@
 			isa = PBXTargetDependency;
 			target = 061EAF9C24E0C23D00E18460 /* Fickr */;
 			targetProxy = 061EAFB424E0C24000E18460 /* PBXContainerItemProxy */;
-		};
-		061EAFC024E0C24000E18460 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 061EAF9C24E0C23D00E18460 /* Fickr */;
-			targetProxy = 061EAFBF24E0C24000E18460 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -900,46 +793,6 @@
 			};
 			name = Release;
 		};
-		061EAFCE24E0C24000E18460 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A11D0C5EAAD3C28E56BAFF9 /* Pods-Fickr-FickrUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FickrUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.FickrUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Fickr;
-			};
-			name = Debug;
-		};
-		061EAFCF24E0C24000E18460 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBB9523E3065EE05D0A8BF30 /* Pods-Fickr-FickrUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FickrUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.FickrUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Fickr;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -966,15 +819,6 @@
 			buildConfigurations = (
 				061EAFCB24E0C24000E18460 /* Debug */,
 				061EAFCC24E0C24000E18460 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		061EAFCD24E0C24000E18460 /* Build configuration list for PBXNativeTarget "FickrUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				061EAFCE24E0C24000E18460 /* Debug */,
-				061EAFCF24E0C24000E18460 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
