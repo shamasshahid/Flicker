@@ -8,6 +8,8 @@
 
 import UIKit
 
+//TODO: remove navigation controller and add action buttons on view itself
+//TODO: change class name to FiltersViewController to match with VM
 class FilterViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
@@ -70,9 +72,11 @@ extension FilterViewController: UITableViewDataSource, UITableViewDelegate {
             updateCellForSelection(cell: cell, index: indexPath.row, isSelected: true)
         }
     }
-    
+    //TODO: add comments
     func updateCellForSelection(cell: FilterTableViewCell, index: Int, isSelected: Bool) {
+        
         viewModel.updateSelectionAtIndex(selection: isSelected, index: index)
+        
         let cellVM = viewModel.getFilterViewModelFor(index: index)
         cell.viewModel = cellVM
     }

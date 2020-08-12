@@ -21,14 +21,12 @@ class SearchService: APIService {
                     completionHandler(.failure(.checkNetworkMaybe))
                     return
                 }
-//                print(String(data: data, encoding: .utf8))
+
                 do {
                     let response = try JSONDecoder().decode(SearchResponseModel.self, from: data)
                     completionHandler(.success(response.photos.photo))
-                    
                 } catch {
-                    print("error -> \(error)")
-                    completionHandler(.failure(.invalidParseStructure))
+                    completionHandler(.failure(.invalidResponseStructure))
                 }
             })
             task.resume()

@@ -27,9 +27,9 @@ class PhotoGridViewModelTest: XCTestCase {
         
         let searchExpectation = XCTestExpectation(description: "Request Fetching")
         viewModel.onDataRefreshed = {
-            
             searchExpectation.fulfill()
         }
+        
         viewModel.searchString = "testString"
         wait(for: [searchExpectation], timeout: 15)
         XCTAssertEqual(viewModel.rowCount, 4)

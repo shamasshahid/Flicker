@@ -11,11 +11,11 @@ import SDWebImage
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     static var cellWidth = 200
     static var cellHeight = 200
     static var reuseIdentifier = "image_collection_cell"
-    
-    @IBOutlet weak var imageView: UIImageView!
     
     var viewModel: PhotoCellViewModel? {
         didSet {
@@ -24,7 +24,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
     func updateView() {
-        
         imageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         imageView.sd_setImage(with: viewModel?.getURL(), placeholderImage: #imageLiteral(resourceName: "placeholder"), options: [], context: nil)
     }

@@ -60,7 +60,7 @@ class PhotoGridViewModel {
         self.locationManager.requestAccess()
       }
     
-    // Creating Filter objects from all the tags
+    /// Creating Filter objects from all the tags
     private func generateFilterModels() {
         var allTags = Set<String>()
         
@@ -77,10 +77,11 @@ class PhotoGridViewModel {
         })
     }
     
-    // Filtering photos based on the selected filters
+    /// Filtering photos based on the selected filters
     private func filterPhotos() {
         
         let selectedFilters = filterModels.filter({ $0.isSelected })
+        
         // return all photos if no selected filters
         if selectedFilters.isEmpty {
             filteredPhotoModels = photoModels
@@ -111,7 +112,6 @@ class PhotoGridViewModel {
         }
         
         service.fetch(urlRequest: SearchRouter.search(searchString: searchText)) { [weak self] (result) in
-            
             self?.handleFetchedResult(result: result)
         }
     }
@@ -123,10 +123,11 @@ class PhotoGridViewModel {
         case .failure(let error):
             print(error)
         }
+        //TODO: add case unknown?
     }
     
     
-    /// Create and return PhotoCellViewModel for the Index
+    /// Create and return PhotoCellViewModel for the Index to be used for photo Detail View
     /// - Parameter index: Index for the Photo
     /// - Returns: PhotoCellViewModel
     func getModelForCellAt(index: Int) -> PhotoCellViewModel? {

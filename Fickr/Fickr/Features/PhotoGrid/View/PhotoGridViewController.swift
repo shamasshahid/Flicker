@@ -8,12 +8,14 @@
 
 import UIKit
 
+///Starting view of the app. It displays grid of photo thumnails.
+///User can search photos and filter results based on available tags.
 class PhotoGridViewController: UIViewController {
-    
-    static var detailSegueIdentifier = "show_detail"
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    static var detailSegueIdentifier = "show_detail"
     
     var viewModel: PhotoGridViewModel!
     let repo: Repository = PhotosRepository()
@@ -32,7 +34,6 @@ class PhotoGridViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         setupViews()
     }
@@ -48,13 +49,13 @@ class PhotoGridViewController: UIViewController {
             self?.collectionView.reloadData()
         }
     }
-    
+    ///Preparing viewModels for navigating to either Filter selection screen OR PhotoDetail view from tapping onto thumbnail
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Create and assign the viewmodel
         let viewController = (segue.destination as? UINavigationController)?.viewControllers.first
         
         if let destination = viewController as? FilterViewController {
-            
+
             destination.viewModel = viewModel.getFiltersVM()
             
         } else if let destination = viewController as? PhotoDetailViewController,

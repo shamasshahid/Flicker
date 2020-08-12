@@ -35,9 +35,10 @@ enum LocationAccessRequestStatus {
 }
 
 class LocationManager: NSObject, LocationService {
-    
-    private let locationManager = CLLocationManager()
+
     weak var locationCallbackListener: LocationCallbackListener?
+
+    private let locationManager = CLLocationManager()
     private var isFetchingLocation = false
     private var lastUserLocation: CLLocation?
     

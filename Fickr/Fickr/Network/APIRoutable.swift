@@ -8,8 +8,7 @@
 
 import Foundation
 
-public enum HttpMethod : String
-{
+public enum HttpMethod : String {
     case GET
     case POST
     case PUT
@@ -54,7 +53,7 @@ public extension APIRoutable{
     func asURLRequest() throws -> URLRequest
     {
         var components = URLComponents()
-        components.scheme = "https"
+        components.scheme = "https" //TODO add property
         components.host = baseURL
         components.path = path
         components.queryItems = queryItems
@@ -65,6 +64,7 @@ public extension APIRoutable{
         
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
+        
         for headerField in headers.keys {
             request.setValue(headers[headerField] as? String, forHTTPHeaderField: headerField)
         }

@@ -22,6 +22,7 @@ class FiltersViewModel {
         return filtersArray.count
     }
     
+    ///TODO: documentation
     func getFilterViewModelFor(index: Int) -> FilterCellViewModel? {
         
         // just a precautionary index check
@@ -29,8 +30,7 @@ class FiltersViewModel {
             return nil
         }
         
-        let model = filtersArray[index]        
-        return FilterCellViewModel(model: model)
+        return FilterCellViewModel(model: filtersArray[index])
     }
     
     func updateSelectionAtIndex(selection: Bool, index: Int) {

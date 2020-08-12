@@ -21,6 +21,7 @@ class DetailViewModelTests: XCTestCase {
         object = PhotoObject(id: "50215731483", owner: "24083365", secret: "539b102771", server: "65535", farm: 66, title: "Mountain Bluebird", isPublic: 1, isFriend: 0, isFamily: 0, tags: "bird nature wildlife ornithology saskatchewan pamhawkes", urlMedium: "https://live.staticflickr.com/65535/50216584631_be8af04ecb.jpg", urlOriginal: "https://live.staticflickr.com/65535/50216584631_3fd354ab3f_o.jpg", urlThumbnail: "https://live.staticflickr.com/65535/50216584631_be8af04ecb_t.jpg", views: "100", originalHeight: "3795", originalWidth: "5092", dateTaken: "2020-08-10 04:32:11", dateUploaded: "1597194066")
         
         objectWithEmptyAttributes = PhotoObject(id: "123423", owner: "12343", secret: "539b102771", server: "65535", farm: 66, title: "test Title", isPublic: 1, isFriend: 0, isFamily: 0, tags: "", urlMedium: nil, urlOriginal: nil, urlThumbnail: nil, views: nil, originalHeight: nil, originalWidth: nil, dateTaken: nil, dateUploaded: nil)
+        
         detailViewModel = PhotoDetailViewModel(model: object)
     }
 
@@ -32,8 +33,7 @@ class DetailViewModelTests: XCTestCase {
     }
 
     func testDetailViewModel() throws {
-//        dateTakenLabel.text = viewModel.dateTakenText
-//        dateUploadedLabel.text = viewModel.dateUploadedText
+
         XCTAssertEqual(detailViewModel.title, object.title, "Titles should match")
         XCTAssertEqual(detailViewModel.numberOfViewsText, "Views: \(object.views!)")
         XCTAssertEqual(detailViewModel.imageDimensionsText, "Size: \(object.originalWidth!) x \(object.originalHeight!)")

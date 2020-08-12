@@ -13,7 +13,7 @@ import Foundation
 class MockAPIService: APIService {
     
     var mockContentData: Data {
-        return getData(name: "dummy")
+        return getData(name: "photosResponse")
     }
 
     func getData(name: String, withExtension: String = "json") -> Data {

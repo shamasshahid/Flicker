@@ -11,11 +11,8 @@ import Foundation
 class FilterCellViewModel {
     
     private var filter: FilterObject
-    
-    var onFilterStateChanged: (() -> Void)?
-    
-    init(model: FilterObject) {
         
+    init(model: FilterObject) {
         filter = model
     }
     

@@ -11,10 +11,9 @@ import Foundation
 enum NetworkError: Error {
     case badURL
     case checkNetworkMaybe
-    case invalidParseStructure
+    case invalidResponseStructure
 }
 
 protocol APIService {
-    
     func fetch(urlRequest: APIRoutable, completionHandler: @escaping (Result<[PhotoObject], NetworkError>) -> Void)
 }

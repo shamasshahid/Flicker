@@ -16,17 +16,12 @@ class FilterTableViewCell: UITableViewCell {
     
     var viewModel: FilterCellViewModel? {
         didSet {
-            viewModel?.onFilterStateChanged = { [weak self] in
-                self?.setAccessoryView(isSelected: self?.viewModel?.isSelected() ?? false)
-            }
-            
             updateView()
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
     func updateView() {

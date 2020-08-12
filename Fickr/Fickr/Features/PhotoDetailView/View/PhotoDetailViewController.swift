@@ -9,14 +9,9 @@
 import UIKit
 import SDWebImage
 
+//TODO: remove navigation controller and add action buttons on view itself
 class PhotoDetailViewController: UIViewController {
 
-    enum PhotoDetailStrings: String {
-        case close = "Close"
-    }
-    
-    var viewModel: PhotoDetailViewModel!
-    
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateTakenLabel: UILabel!
@@ -24,15 +19,31 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet weak var originalDimensionsLabel: UILabel!
     @IBOutlet weak var numberOfViewsLabel: UILabel!
     
+    enum PhotoDetailStrings: String {
+        case close = "Close"
+    }
+    
+    var viewModel: PhotoDetailViewModel!
+    
+    fileprivate func setupNavigation() {
+        let closeTitle = NSLocalizedString(PhotoDetailStrings.close.rawValue, comment: "")
+        let barItem = UIBarButtonItem(title: closeTitle, style: .done, target: self, action: #selector(closeButtonTapped))
+        navigationItem.leftBarButtonItem = barItem
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateLabels()
+        //TODO: move to storyboard
         photoImageView.contentMode = .scaleAspectFit
         
-        let closeTitle = NSLocalizedString(PhotoDetailStrings.close.rawValue, comment: "")
-        let barItem = UIBarButtonItem(title: closeTitle, style: .done, target: self, action: #selector(closeButtonTapped))
-        navigationItem.leftBarButtonItem = barItem
+        setupNavigation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupImageView()
     }
     
     @objc func closeButtonTapped() {
@@ -46,12 +57,6 @@ class PhotoDetailViewController: UIViewController {
         dateTakenLabel.text = viewModel.dateTakenText
         dateUploadedLabel.text = viewModel.dateUploadedText
         titleLabel.text = viewModel.title
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        setupImageView()
     }
     
     func setupImageView() {

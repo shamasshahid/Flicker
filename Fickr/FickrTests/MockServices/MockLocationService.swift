@@ -15,6 +15,7 @@ class MockLocationService: LocationService {
     var locationCallbackListener: LocationCallbackListener?
     
     func requestAccess() -> LocationAccessRequestStatus {
+        //TODO: add resaons, should not use main queue
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
             self?.locationCallbackListener?.locationPermissionGranted(status: .authorizedWhenInUse)
         }
@@ -26,6 +27,5 @@ class MockLocationService: LocationService {
     }
     
     func stopUpdatingLocation() {
-        
     }
 }

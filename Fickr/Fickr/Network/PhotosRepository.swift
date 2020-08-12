@@ -9,14 +9,11 @@
 import Foundation
 
 protocol Repository {
-    typealias ResponseObject = [PhotoObject]
     func getService() -> APIService
 }
 
 class PhotosRepository: Repository {
-    
     func getService() -> APIService {
         return SearchService()
     }
-    
 }

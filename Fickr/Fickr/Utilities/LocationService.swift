@@ -9,6 +9,7 @@
 import Foundation
 
 protocol LocationService {
+    
     var locationCallbackListener: LocationCallbackListener? { get set }
     
     @discardableResult

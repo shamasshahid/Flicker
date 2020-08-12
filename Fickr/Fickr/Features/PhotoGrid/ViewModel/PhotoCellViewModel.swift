@@ -17,6 +17,6 @@ class PhotoCellViewModel {
     }
     
     func getURL() -> URL? {
-        return model.urlThumbnail == nil ? nil : URL(string: model.urlThumbnail ?? "")
+        return URL(string: model.urlThumbnail ?? "")
     }
 }
