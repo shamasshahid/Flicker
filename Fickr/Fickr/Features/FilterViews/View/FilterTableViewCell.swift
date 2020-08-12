@@ -20,8 +20,6 @@ class FilterTableViewCell: UITableViewCell {
                 self?.setAccessoryView(isSelected: self?.viewModel?.isSelected() ?? false)
             }
             
-            //TODO: really need or not?
-//            setSelected(viewModel?.isSelected() ?? false, animated: true)
             updateView()
         }
     }
