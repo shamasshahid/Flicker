@@ -10,39 +10,33 @@ import Foundation
 
 class FiltersViewModel {
     
-    var filterModelsArray: [FilterModel] = []
+    private var filtersArray: [FilterObject] = []
     
-    var setSelectedModels: (([FilterModel]) -> ())?
+    var onFiltersUpdated: (([FilterObject]) -> ())?
     
-    init(allFilters: [FilterModel]) {
-        filterModelsArray = allFilters
+    init(allFilters: [FilterObject]) {
+        filtersArray = allFilters
     }
     
     var rowCount: Int {
-        return filterModelsArray.count
+        return filtersArray.count
     }
     
     func getFilterViewModelForCell(index: Int) -> FilterCellViewModel? {
         
         // just a precautionary index check
-        guard index > 0, index < filterModelsArray.count else {
+        guard index > 0, index < filtersArray.count else {
             return nil
         }
-        let model = filterModelsArray[index]
+        
+        let model = filtersArray[index]
         
         let viewModel = FilterCellViewModel(model: model)
-        viewModel.updateStateCallBack = { [weak self] model in
-            self?.filterModelsArray[index] = model
-        }
         return viewModel
     }
     
-    func changedSelectionCellAtRow(selection: Bool, index: Int) {
-        self.filterModelsArray[index].isSelected = selection
+    func updateSelectionAtIndex(selection: Bool, index: Int) {
+        self.filtersArray[index].isSelected = selection
+        onFiltersUpdated?(filtersArray)
     }
-    
-    func viewDismissing() {
-        setSelectedModels?(filterModelsArray)
-    }
-    
 }

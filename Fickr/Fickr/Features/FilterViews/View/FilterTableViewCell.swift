@@ -10,9 +10,12 @@ import UIKit
 
 class FilterTableViewCell: UITableViewCell {
 
+    static let reuseIdentifier = "filter_cell"
+    
+    @IBOutlet weak var filterLabel: UILabel!
     var viewModel: FilterCellViewModel? {
         didSet {
-            viewModel?.updateViewCallBack = { [weak self] in
+            viewModel?.onFilterStateChanged = { [weak self] in
                 self?.updateView()
             }
             setSelected(viewModel?.isSelected() ?? false, animated: true)
@@ -28,13 +31,16 @@ class FilterTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
 
         super.setSelected(selected, animated: animated)
-        accessoryType = isSelected ? .checkmark : .none
+        setAccessoryView(isSelected: selected)
     }
 
     func updateView() {
-        textLabel?.text = viewModel?.getFilterLabel()
-        accessoryType = (viewModel?.isSelected() ?? false) ? .checkmark : .none
-//        isSelected = viewModel?.isSelected() ?? false
+        filterLabel?.text = viewModel?.getFilterLabel()
+        setAccessoryView(isSelected: viewModel?.isSelected() ?? false)
+    }
+    
+    func setAccessoryView(isSelected: Bool) {
+        accessoryType = isSelected ? .checkmark : .none
     }
 
 }

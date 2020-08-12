@@ -10,17 +10,13 @@ import Foundation
 
 class PhotoCellViewModel {
     
-    let model: PhotoModel
+    let model: PhotoObject
     
-    init(photoModel: PhotoModel) {
+    init(photoModel: PhotoObject) {
         model = photoModel
     }
     
-    func getURLString() -> String {
-        return "https://farm\(model.farm).staticflickr.com/\(model.server)/\(model.id)_\(model.secret)_m.png"
-    }
-    
     func getURL() -> URL? {
-        return URL(string: getURLString())
+        return model.urlThumbnail == nil ? nil : URL(string: model.urlThumbnail ?? "")
     }
 }

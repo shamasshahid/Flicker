@@ -9,21 +9,14 @@
 import Foundation
 
 protocol Repository {
-    
+    typealias ResponseObject = [PhotoObject]
     func getService() -> APIService
-    
-    func getURLRouter() -> APIRoutable
 }
 
-class DependencyRepository: Repository {
+class PhotosRepository: Repository {
     
     func getService() -> APIService {
         return SearchService()
     }
     
-    func getURLRouter() -> APIRoutable {
-        
-        return SearchRouter()
-    }
-
 }

@@ -62,5 +62,7 @@
 	</array>
 	<key>flickr_api_key</key>
 	<string>$(FLICKR_API_KEY)</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>The app uses your current location to get relevant photos for you.</string>
 </dict>
 </plist>

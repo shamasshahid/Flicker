@@ -21,7 +21,7 @@ public protocol APIRoutable {
     var path : String {get}
     var httpMethod : HttpMethod {get}
     var headers : [String:Any] {get}
-    var queryItems: [String: Any] {get}
+    var queryItems: [URLQueryItem] {get}
     func asURLRequest() throws -> URLRequest
 }
 
@@ -32,7 +32,7 @@ public enum RoutableError : Error{
 public extension APIRoutable{
     
     var baseURL : String {
-        return "https://www.flickr.com"
+        return "www.flickr.com"
     }
     
     var path : String {
@@ -47,23 +47,19 @@ public extension APIRoutable{
         return [:]
     }
     
-    var queryItems: [String: Any] {
-        return [:]
+    var queryItems: [URLQueryItem] {
+        return []
     }
     
     func asURLRequest() throws -> URLRequest
     {
-        var queryString = ""
-        for queryO in queryItems where !queryItems.isEmpty {
-            if queryString.isEmpty {
-                queryString.append("?")
-            } else {
-                queryString.append("&")
-            }
-            queryString.append("\(queryO.key)=\(queryO.value)")
-        }
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = baseURL
+        components.path = path
+        components.queryItems = queryItems
         
-        guard let url = URL(string: baseURL+path+queryString) else{
+        guard let url = components.url else{
             throw RoutableError.invalidRoute
         }
         

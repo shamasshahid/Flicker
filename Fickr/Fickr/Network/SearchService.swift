@@ -12,20 +12,24 @@ class SearchService: APIService {
     
     let session = URLSession.shared
     
-    func fetch(urlRequest: APIRoutable, completionHandler: @escaping (Result<[PhotoModel], NetworkError>) -> Void) {
+    func fetch(urlRequest: APIRoutable, completionHandler: @escaping (Result<[PhotoObject], NetworkError>) -> Void) {
         
         do {
             let task = try session.dataTask(with: urlRequest.asURLRequest(), completionHandler: { (dataResponse, responseObject, error) in
                 
                 guard let data = dataResponse else {
-                    completionHandler(.failure(error as! NetworkError))
+                    completionHandler(.failure(.checkNetworkMaybe))
                     return
                 }
-                guard let response = try? JSONDecoder().decode(SearchResponseModel.self, from: data) else{
+//                print(String(data: data, encoding: .utf8))
+                do {
+                    let response = try JSONDecoder().decode(SearchResponseModel.self, from: data)
+                    completionHandler(.success(response.photos.photo))
+                    
+                } catch {
+                    print("error -> \(error)")
                     completionHandler(.failure(.invalidParseStructure))
-                    return
                 }
-                completionHandler(.success(response.photos.photo))
             })
             task.resume()
         } catch {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FilterModel {
+struct FilterObject {
     
     var title: String
     var isSelected: Bool

@@ -10,28 +10,26 @@ import Foundation
 
 class FilterCellViewModel {
     
-    var filterModel: FilterModel
+    private var filter: FilterObject
     
-    var updateViewCallBack: (() -> Void)?
-    var updateStateCallBack: ((FilterModel) -> Void)?
+    var onFilterStateChanged: (() -> Void)?
     
-    init(model: FilterModel) {
+    init(model: FilterObject) {
         
-        filterModel = model
+        filter = model
     }
     
     func getFilterLabel() -> String {
-        return filterModel.title
+        return filter.title
     }
     
     func isSelected() -> Bool {
-        return filterModel.isSelected
+        return filter.isSelected
     }
     
     func selectionChanged(isSelected: Bool) {
-        filterModel.isSelected = isSelected
-        updateStateCallBack?(filterModel)
-        updateViewCallBack?()
+        filter.isSelected = isSelected
+        onFilterStateChanged?()
     }
     
 }
