@@ -45,16 +45,18 @@ class PhotoDetailViewModel {
         return String(format: NSLocalizedString(PhotoDetailStrings.viewNumber.rawValue, comment: ""), "\(views)")
     }
     
+    // API returns dateTaken in a "2020-08-10 04:32:11" format
+    // first we make a date out of it, and then show it as a medium style format
     var dateTakenText: String {
         guard let dateString = photoModel.dateTaken, let date = DateFormatter.longDateFormatReader.date(from: dateString) else {
             return NSLocalizedString(PhotoDetailStrings.dateTakenNotAvailable.rawValue, comment: "")
         }
         
-        let formattedDate = DateFormatter.shortDateStringFormatter.string(from: date)
+        let formattedDate = DateFormatter.mediumDateStringFormatter.string(from: date)
         return String(format: NSLocalizedString(PhotoDetailStrings.dateTaken.rawValue, comment: ""), "\(formattedDate)")
     }
     
-    //TODO: move date logic to one method
+    // API returns dateUploaded as timestamp "1597194066". First make a date object, then the formatted text
     var dateUploadedText: String {
         
         guard let interval = TimeInterval(photoModel.dateUploaded ?? "") else {
@@ -62,10 +64,11 @@ class PhotoDetailViewModel {
         }
         
         let date = Date(timeIntervalSince1970: interval)
-        let dateString = DateFormatter.shortDateStringFormatter.string(from: date)
+        let dateString = DateFormatter.mediumDateStringFormatter.string(from: date)
         return String(format: NSLocalizedString(PhotoDetailStrings.dateUploaded.rawValue, comment: ""), "\(dateString)")
     }
         
+    // dimensions are shown as 'width x height' format i.e 1600 x 1200
     var imageDimensionsText: String {
         guard let width = photoModel.originalWidth, let height = photoModel.originalHeight else {
             return NSLocalizedString(PhotoDetailStrings.sizeNotAvailable.rawValue, comment: "")

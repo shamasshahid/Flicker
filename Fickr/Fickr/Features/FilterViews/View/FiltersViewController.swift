@@ -8,6 +8,10 @@
 
 import UIKit
 
+// This view shows the list of tags, which we can use to filter results
+// Relies of FiltersViewModel for its business logic.
+// As the user selects the filters, the results are filtered immediately.
+
 class FiltersViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!

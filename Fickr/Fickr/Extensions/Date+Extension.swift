@@ -16,7 +16,7 @@ extension DateFormatter {
         return formatter
     }()
     
-    static let shortDateStringFormatter: DateFormatter = {
+    static let mediumDateStringFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         return formatter

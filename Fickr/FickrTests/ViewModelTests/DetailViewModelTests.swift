@@ -40,11 +40,11 @@ class DetailViewModelTests: XCTestCase {
         
         let interval = TimeInterval(object.dateUploaded ?? "")!
         let date = Date(timeIntervalSince1970: interval)
-        XCTAssertEqual(detailViewModel.dateUploadedText, "Date uploaded: \(DateFormatter.shortDateStringFormatter.string(from: date))")
+        XCTAssertEqual(detailViewModel.dateUploadedText, "Date uploaded: \(DateFormatter.mediumDateStringFormatter.string(from: date))")
         
         let dateTaken = object.dateTaken!
         let formattedDate = DateFormatter.longDateFormatReader.date(from: dateTaken)!
-        XCTAssertEqual(detailViewModel.dateTakenText, "Date taken: \(DateFormatter.shortDateStringFormatter.string(from: formattedDate))")
+        XCTAssertEqual(detailViewModel.dateTakenText, "Date taken: \(DateFormatter.mediumDateStringFormatter.string(from: formattedDate))")
         
         XCTAssertEqual(detailViewModel.originalURL, URL(string: object.urlOriginal ?? ""))
     }

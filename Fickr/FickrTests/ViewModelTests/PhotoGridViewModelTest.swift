@@ -45,7 +45,6 @@ class PhotoGridViewModelTest: XCTestCase {
     func testViewModelLocation() throws {
         
         let expecation = XCTestExpectation(description: "Location Fetching")
-//        let locationExpectation = self.expectation(description: "Location Fetching")
         viewModel.onDataRefreshed = {
             
             expecation.fulfill()
