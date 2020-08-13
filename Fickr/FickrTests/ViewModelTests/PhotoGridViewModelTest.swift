@@ -38,11 +38,22 @@ class PhotoGridViewModelTest: XCTestCase {
         let filterViewModel = viewModel.getFiltersVM()
         XCTAssertNotNil(filterViewModel, "filterViewModel should not be nil")
         
+        let cellModel = viewModel.getModelForCellAt(index: 0)
+        XCTAssertNotNil(cellModel)
+        let outOfBoundModel = viewModel.getModelForCellAt(index: 10)
+        XCTAssertNil(outOfBoundModel)
+        
         let detailViewModel = viewModel.getDetailViewModelForIndex(index: 0)
         XCTAssertNotNil(detailViewModel, "detailViewModel should not be nil")
+        let outOfBoundDetailViewModel = viewModel.getDetailViewModelForIndex(index: 10)
+        XCTAssertNil(outOfBoundDetailViewModel)
     }
     
     func testViewModelLocation() throws {
+        
+        // As soon as the viewmodel is created, it requests location, when it gets it,
+        // it makes the search call. So for location test, we just need to wait for the onDataRefreshed
+        // to be called
         
         let expecation = XCTestExpectation(description: "Location Fetching")
         viewModel.onDataRefreshed = {
@@ -51,8 +62,6 @@ class PhotoGridViewModelTest: XCTestCase {
         }
         
         wait(for: [expecation], timeout: 30)
-
-        
     }
     
 }

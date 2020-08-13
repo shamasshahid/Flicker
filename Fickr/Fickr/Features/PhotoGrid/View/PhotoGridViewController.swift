@@ -67,6 +67,7 @@ class PhotoGridViewController: UIViewController {
     }
 }
 
+// MARK: UISearchBarDelegate delegate
 extension PhotoGridViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -75,6 +76,7 @@ extension PhotoGridViewController: UISearchBarDelegate {
     }
 }
 
+// MARK: Collection View Prefetch delegate
 extension PhotoGridViewController: UICollectionViewDataSourcePrefetching {
     
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
@@ -83,6 +85,7 @@ extension PhotoGridViewController: UICollectionViewDataSourcePrefetching {
     }
 }
 
+// MARK: Collection View Delegates
 extension PhotoGridViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
