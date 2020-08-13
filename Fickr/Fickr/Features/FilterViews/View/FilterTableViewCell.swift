@@ -24,12 +24,12 @@ class FilterTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    func updateView() {
+    private func updateView() {
         filterLabel?.text = viewModel?.getFilterLabel()
         setAccessoryView(isSelected: viewModel?.isSelected() ?? false)
     }
     
-    func setAccessoryView(isSelected: Bool) {
+    private func setAccessoryView(isSelected: Bool) {
         accessoryType = isSelected ? .checkmark : .none
     }
 

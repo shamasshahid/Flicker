@@ -16,10 +16,11 @@ public enum HttpMethod : String {
 }
 
 public protocol APIRoutable {
-    var baseURL : String {get}
-    var path : String {get}
-    var httpMethod : HttpMethod {get}
-    var headers : [String:Any] {get}
+    var scheme: RoutableScheme {get}
+    var baseURL: String {get}
+    var path: String {get}
+    var httpMethod: HttpMethod {get}
+    var headers: [String:Any] {get}
     var queryItems: [URLQueryItem] {get}
     func asURLRequest() throws -> URLRequest
 }
@@ -28,7 +29,12 @@ public enum RoutableError : Error{
     case invalidRoute
 }
 
-public extension APIRoutable{
+public enum RoutableScheme: String {
+    case https
+    case http
+}
+
+public extension APIRoutable {
     
     var baseURL : String {
         return "www.flickr.com"
@@ -36,6 +42,10 @@ public extension APIRoutable{
     
     var path : String {
         return "/services/rest/"
+    }
+    
+    var scheme: RoutableScheme {
+        return .https
     }
     
     var httpMethod: HttpMethod {
@@ -50,10 +60,9 @@ public extension APIRoutable{
         return []
     }
     
-    func asURLRequest() throws -> URLRequest
-    {
+    func asURLRequest() throws -> URLRequest {
         var components = URLComponents()
-        components.scheme = "https" //TODO add property
+        components.scheme = scheme.rawValue
         components.host = baseURL
         components.path = path
         components.queryItems = queryItems

@@ -46,7 +46,7 @@ class PhotoDetailViewController: UIViewController {
         setupImageView()
     }
     
-    func setupImageView() {
+    fileprivate func setupImageView() {
         photoImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         photoImageView.sd_setImage(with: viewModel.originalURL, placeholderImage: #imageLiteral(resourceName: "placeholder"))
     }

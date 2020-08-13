@@ -10,7 +10,7 @@ import Foundation
 
 class PhotoCellViewModel {
     
-    let model: PhotoObject
+    private let model: PhotoObject
     
     init(photoModel: PhotoObject) {
         model = photoModel

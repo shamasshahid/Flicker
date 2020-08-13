@@ -23,7 +23,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func updateView() {
+    private func updateView() {
         imageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         imageView.sd_setImage(with: viewModel?.getURL(), placeholderImage: #imageLiteral(resourceName: "placeholder"), options: [], context: nil)
     }

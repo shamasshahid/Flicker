@@ -81,7 +81,7 @@ extension FiltersViewController: UITableViewDataSource, UITableViewDelegate {
     ///   - cell: FilterTableViewCell
     ///   - index: Index
     ///   - isSelected: selection state
-    func updateCellForSelection(cell: FilterTableViewCell, index: Int, isSelected: Bool) {
+    private func updateCellForSelection(cell: FilterTableViewCell, index: Int, isSelected: Bool) {
         
         viewModel.updateSelectionAtIndex(selection: isSelected, index: index)
         
