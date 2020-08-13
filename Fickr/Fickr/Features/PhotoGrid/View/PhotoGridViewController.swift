@@ -26,7 +26,7 @@ class PhotoGridViewController: UIViewController {
     }
     
     fileprivate func setupViewModel() {
-        viewModel = PhotoGridViewModel(apiService: repo.getService(), locationManager: LocationManager())
+        viewModel = PhotoGridViewModel(apiService: repo.getAPIService(), locationManager: repo.getLocationService())
         viewModel.onDataRefreshed = { [weak self] in
             self?.updateCollectionView()
         }

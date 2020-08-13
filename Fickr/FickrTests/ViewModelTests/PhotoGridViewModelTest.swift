@@ -12,10 +12,11 @@ import XCTest
 class PhotoGridViewModelTest: XCTestCase {
 
     var viewModel: PhotoGridViewModel!
+    let repository = MockRepository()
     
     override func setUpWithError() throws {
         
-        viewModel = PhotoGridViewModel(apiService: MockAPIService(), locationManager: MockLocationService())
+        viewModel = PhotoGridViewModel(apiService: repository.getAPIService(), locationManager: repository.getLocationService())
     }
 
     override func tearDownWithError() throws {

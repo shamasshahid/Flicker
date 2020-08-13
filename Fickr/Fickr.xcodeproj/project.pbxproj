@@ -29,6 +29,7 @@
 		0639ECAE24E1784F0066EACD /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639ECAD24E1784F0066EACD /* FiltersViewController.swift */; };
 		0639ECB024E179610066EACD /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639ECAF24E179610066EACD /* FilterTableViewCell.swift */; };
 		0639ECB224E179AA0066EACD /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639ECB124E179AA0066EACD /* FiltersViewModel.swift */; };
+		067F11FF24E4C37200B74077 /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067F11FE24E4C37200B74077 /* MockRepository.swift */; };
 		0680458E24E12566002319A6 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680458D24E12566002319A6 /* PhotoCollectionViewCell.swift */; };
 		0682558E24E21B9C005833BA /* FilterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682558D24E21B9C005833BA /* FilterObject.swift */; };
 		0682559024E21C4B005833BA /* FilterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682558F24E21C4B005833BA /* FilterCellViewModel.swift */; };
@@ -84,6 +85,7 @@
 		0639ECAF24E179610066EACD /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		0639ECB124E179AA0066EACD /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
 		064589EF24E41BCE002C141B /* FlickrApp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FlickrApp.xcconfig; sourceTree = "<group>"; };
+		067F11FE24E4C37200B74077 /* MockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepository.swift; sourceTree = "<group>"; };
 		0680458D24E12566002319A6 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		0682558D24E21B9C005833BA /* FilterObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterObject.swift; sourceTree = "<group>"; };
 		0682558F24E21C4B005833BA /* FilterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellViewModel.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 			children = (
 				060656B024E3B3F7004D5A28 /* MockLocationService.swift */,
 				0699725B24E3635000A4E187 /* MockAPIService.swift */,
+				067F11FE24E4C37200B74077 /* MockRepository.swift */,
 			);
 			path = MockServices;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				060656B124E3B3F7004D5A28 /* MockLocationService.swift in Sources */,
+				067F11FF24E4C37200B74077 /* MockRepository.swift in Sources */,
 				0699725C24E3635000A4E187 /* MockAPIService.swift in Sources */,
 				06B5B7E224E3FDF30062DA65 /* FiltersViewModelTest.swift in Sources */,
 				061EAFB824E0C24000E18460 /* PhotoGridViewModelTest.swift in Sources */,

@@ -9,11 +9,16 @@
 import Foundation
 
 protocol Repository {
-    func getService() -> APIService
+    func getAPIService() -> APIService
+    func getLocationService() -> LocationService
 }
 
 class PhotosRepository: Repository {
-    func getService() -> APIService {
+    func getAPIService() -> APIService {
         return SearchService()
+    }
+    
+    func getLocationService() -> LocationService {
+        return LocationManager()
     }
 }
