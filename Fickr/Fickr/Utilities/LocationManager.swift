@@ -38,9 +38,10 @@ class LocationManager: NSObject, LocationService {
 
     weak var locationCallbackListener: LocationCallbackListener?
 
-    private let locationManager = CLLocationManager()
     private var isFetchingLocation = false
+    
     private var lastUserLocation: CLLocation?
+    private let locationManager = CLLocationManager()
     
     override init() {
         super.init()
@@ -91,8 +92,9 @@ class LocationManager: NSObject, LocationService {
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let userLocation = locations.last, isFetchingLocation else { return }
+        //TODO 
         let horizontalAccuracy = userLocation.horizontalAccuracy
-        if  horizontalAccuracy > 0 && horizontalAccuracy < 200 {
+        if  horizontalAccuracy > 0 {
             stopUpdatingLocation()
             locationCallbackListener?.userLocationObtained(coordinates: userLocation.coordinate)
             lastUserLocation = userLocation

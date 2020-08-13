@@ -36,6 +36,11 @@ class FiltersViewModel {
         return FilterCellViewModel(model: filtersArray[index])
     }
     
+    
+    /// Updates the selection state for the model at the given index.
+    /// - Parameters:
+    ///   - selection: state to be selected
+    ///   - index: index for model
     func updateSelectionAtIndex(selection: Bool, index: Int) {
         self.filtersArray[index].isSelected = selection
         onFiltersUpdated?(filtersArray)

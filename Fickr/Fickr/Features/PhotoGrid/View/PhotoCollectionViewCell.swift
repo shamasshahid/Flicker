@@ -13,9 +13,9 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    static var cellWidth = 200
-    static var cellHeight = 200
-    static var reuseIdentifier = "image_collection_cell"
+    static let cellWidth = 200
+    static let cellHeight = 200
+    static let reuseIdentifier = "image_collection_cell"
     
     var viewModel: PhotoCellViewModel? {
         didSet {
@@ -23,7 +23,20 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    override func awakeFromNib() {
+        roundImageView()
+    }
+    
+    fileprivate func roundImageView() {
+        
+        imageView.layer.cornerRadius = 10
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 2
+        imageView.layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
     private func updateView() {
+        
         imageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         imageView.sd_setImage(with: viewModel?.getURL(), placeholderImage: #imageLiteral(resourceName: "placeholder"), options: [], context: nil)
     }

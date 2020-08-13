@@ -12,7 +12,7 @@ class AppConfig {
     
     static var FLICKR_API_KEY: String {
         guard let fetchKey = Bundle.main.object(forInfoDictionaryKey: "flickr_api_key") as? String, !fetchKey.isEmpty else {
-            fatalError("Flickr API Key Missing. Please put a valid key in AppConfiguration")
+            fatalError("Flickr API Key Missing. Please put a valid key in FlickrApp.xcconfig")
         }
         return fetchKey
     }

@@ -10,13 +10,15 @@ import Foundation
 
 extension DateFormatter {
     
+    /// It expect the date to be in "2020-08-10 04:32:11" fomat
     static let longDateFormatReader: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return formatter
     }()
     
-    static let mediumDateStringFormatter: DateFormatter = {
+    /// Prints the date n 
+    static let mediumDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         return formatter

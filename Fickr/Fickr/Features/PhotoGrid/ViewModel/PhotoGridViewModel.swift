@@ -126,6 +126,9 @@ class PhotoGridViewModel {
         }
     }
     
+    
+    /// For the given indices, triggers prefetch for SDWebImage
+    /// - Parameter indices: Array of indices
     func prefetchRequestedForIndices(indices: [Int]) {
         var urlsToPrefetch: [URL] = []
         for anIndex in indices {
@@ -189,7 +192,6 @@ extension PhotoGridViewModel: LocationCallbackListener {
     }
     
     func locationPermissionDenied() {
-        print("permission denied")
     }
     
     func locationPermissionGranted(status: CLAuthorizationStatus) {

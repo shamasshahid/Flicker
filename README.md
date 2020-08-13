@@ -2,7 +2,7 @@
 
 ## Note
 
-Please put a valid key in FlickrApp.
+Please put a valid key in FlickrApp.xcconfig.
 
 I have ignored Flickr's request to annotate the contributions. I hope that's not within the scope of the app.
 
@@ -40,3 +40,4 @@ Unit tests coverage for business logic in `PhotoGridViewModel`, `DetailViewModel
 
 * Add UI testing
 * Add user annotation
+* Add a remove all filters button to `filtersViewController`.

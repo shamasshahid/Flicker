@@ -9,8 +9,6 @@
 import Foundation
 
 class PhotoDetailViewModel {
-        
-    private let photoModel: PhotoObject
     
     // We shouldn't separate some of the prefixes (Date uploaded), since their place in some languages might not be a prefix at all
     enum PhotoDetailStrings: String {
@@ -23,6 +21,8 @@ class PhotoDetailViewModel {
         case size = "Size: %@ x %@"
         case sizeNotAvailable = "Size: N/A"
     }
+    
+    private let photoModel: PhotoObject
     
     init(model: PhotoObject) {
         photoModel = model
@@ -52,7 +52,7 @@ class PhotoDetailViewModel {
             return NSLocalizedString(PhotoDetailStrings.dateTakenNotAvailable.rawValue, comment: "")
         }
         
-        let formattedDate = DateFormatter.mediumDateStringFormatter.string(from: date)
+        let formattedDate = DateFormatter.mediumDateFormatter.string(from: date)
         return String(format: NSLocalizedString(PhotoDetailStrings.dateTaken.rawValue, comment: ""), "\(formattedDate)")
     }
     
@@ -64,7 +64,7 @@ class PhotoDetailViewModel {
         }
         
         let date = Date(timeIntervalSince1970: interval)
-        let dateString = DateFormatter.mediumDateStringFormatter.string(from: date)
+        let dateString = DateFormatter.mediumDateFormatter.string(from: date)
         return String(format: NSLocalizedString(PhotoDetailStrings.dateUploaded.rawValue, comment: ""), "\(dateString)")
     }
         
