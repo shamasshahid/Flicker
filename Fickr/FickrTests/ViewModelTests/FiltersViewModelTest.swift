@@ -16,8 +16,8 @@ class FiltersViewModelTest: XCTestCase {
     
     override func setUpWithError() throws {
         
-        let filtersArray = [FilterObject(titleString: "filter 1", selected: false),
-                            FilterObject(titleString: "filter 2", selected: false),
+        let filtersArray = [FilterObject(titleString: "filter 1", selected: true),
+                            FilterObject(titleString: "filter 2", selected: true),
                             FilterObject(titleString: "filter 3", selected: false),
                             FilterObject(titleString: "filter 4", selected: false)]
                             
@@ -49,6 +49,23 @@ class FiltersViewModelTest: XCTestCase {
         XCTAssertNil(incorrectModel)
         
         wait(for: [filterExpectation], timeout: 5)
+
+    }
+    
+    func testResetAllFilters() {
+        
+        let filterResetExpectation = XCTestExpectation(description: "Resetting Filters")
+        filtersViewModel.onFilterReset = {
+            
+            filterResetExpectation.fulfill()
+            let viewModel = self.filtersViewModel.getFilterViewModelFor(index: 0)
+            
+            XCTAssertNotNil(viewModel)
+            XCTAssertFalse(viewModel!.isSelected())
+        }
+        filtersViewModel.resetAllFilters()
+        wait(for: [filterResetExpectation], timeout: 5)
+
     }
 
 }
