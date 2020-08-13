@@ -38,19 +38,13 @@ class DetailViewModelTests: XCTestCase {
         XCTAssertEqual(detailViewModel.numberOfViewsText, "Views: \(object.views!)")
         XCTAssertEqual(detailViewModel.imageDimensionsText, "Size: \(object.originalWidth!) x \(object.originalHeight!)")
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
         let interval = TimeInterval(object.dateUploaded ?? "")!
         let date = Date(timeIntervalSince1970: interval)
-        dateFormatter.dateStyle = .medium
-        XCTAssertEqual(detailViewModel.dateUploadedText, "Date uploaded: \(dateFormatter.string(from: date))")
+        XCTAssertEqual(detailViewModel.dateUploadedText, "Date uploaded: \(DateFormatter.shortDateStringFormatter.string(from: date))")
         
         let dateTaken = object.dateTaken!
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let formattedDate = dateFormatter.date(from: dateTaken)!
-        dateFormatter.dateStyle = .medium
-        XCTAssertEqual(detailViewModel.dateTakenText, "Date taken: \(dateFormatter.string(from: formattedDate))")
+        let formattedDate = DateFormatter.longDateFormatReader.date(from: dateTaken)!
+        XCTAssertEqual(detailViewModel.dateTakenText, "Date taken: \(DateFormatter.shortDateStringFormatter.string(from: formattedDate))")
         
         XCTAssertEqual(detailViewModel.originalURL, URL(string: object.urlOriginal ?? ""))
     }

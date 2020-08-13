@@ -9,12 +9,10 @@
 import Foundation
 
 class PhotoDetailViewModel {
-    
-    private let dateFormat = "yyyy-MM-dd HH:mm:ss"
-    
+        
     private let photoModel: PhotoObject
-    private let dateFormatter = DateFormatter()
     
+    // We shouldn't separate some of the prefixes (Date uploaded), since their place in some languages might not be a prefix at all
     enum PhotoDetailStrings: String {
         case viewNumber = "Views: %@"
         case viewNotAvailable = "Views: N/A"
@@ -40,52 +38,40 @@ class PhotoDetailViewModel {
     }
     
     var numberOfViewsText: String {
-        if let views = photoModel.views {
-            return String(format: NSLocalizedString(PhotoDetailStrings.viewNumber.rawValue, comment: ""), "\(views)")
-        } else {
+        guard let views = photoModel.views else {
             return NSLocalizedString(PhotoDetailStrings.viewNotAvailable.rawValue, comment: "")
         }
+        
+        return String(format: NSLocalizedString(PhotoDetailStrings.viewNumber.rawValue, comment: ""), "\(views)")
     }
     
     var dateTakenText: String {
-        if let dateString = photoModel.dateTaken, let formattedDate = getDateStringFromString(dateString: dateString) {
-            return String(format: NSLocalizedString(PhotoDetailStrings.dateTaken.rawValue, comment: ""), "\(formattedDate)")
-        } else {
+        guard let dateString = photoModel.dateTaken, let date = DateFormatter.longDateFormatReader.date(from: dateString) else {
             return NSLocalizedString(PhotoDetailStrings.dateTakenNotAvailable.rawValue, comment: "")
         }
-    }
-    
-    private func getDateStringFromString(dateString: String) -> String? {
         
-        dateFormatter.dateFormat = dateFormat
-        if let date = dateFormatter.date(from: dateString) {
-            dateFormatter.dateStyle = .medium
-            return dateFormatter.string(from: date)
-        } else {
-            return nil
-        }
+        let formattedDate = DateFormatter.shortDateStringFormatter.string(from: date)
+        return String(format: NSLocalizedString(PhotoDetailStrings.dateTaken.rawValue, comment: ""), "\(formattedDate)")
     }
     
     //TODO: move date logic to one method
     var dateUploadedText: String {
-        if let interval = TimeInterval(photoModel.dateUploaded ?? "") {
-            
-            let date = Date(timeIntervalSince1970: interval)
-            dateFormatter.dateStyle = .medium
-            
-            let dateString = dateFormatter.string(from: date)
-            return String(format: NSLocalizedString(PhotoDetailStrings.dateUploaded.rawValue, comment: ""), "\(dateString)")
-        } else {
+        
+        guard let interval = TimeInterval(photoModel.dateUploaded ?? "") else {
             return NSLocalizedString(PhotoDetailStrings.dateUploadedNotAvailable.rawValue, comment: "")
         }
+        
+        let date = Date(timeIntervalSince1970: interval)
+        let dateString = DateFormatter.shortDateStringFormatter.string(from: date)
+        return String(format: NSLocalizedString(PhotoDetailStrings.dateUploaded.rawValue, comment: ""), "\(dateString)")
     }
-    
+        
     var imageDimensionsText: String {
-        if let width = photoModel.originalWidth, let height = photoModel.originalHeight {
-            return String(format: NSLocalizedString(PhotoDetailStrings.size.rawValue, comment: ""), "\(width)", "\(height)")
-        } else {
+        guard let width = photoModel.originalWidth, let height = photoModel.originalHeight else {
             return NSLocalizedString(PhotoDetailStrings.sizeNotAvailable.rawValue, comment: "")
         }
+        
+        return String(format: NSLocalizedString(PhotoDetailStrings.size.rawValue, comment: ""), "\(width)", "\(height)")
     }
 }
 

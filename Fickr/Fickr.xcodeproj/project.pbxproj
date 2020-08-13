@@ -30,6 +30,8 @@
 		0639ECB024E179610066EACD /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639ECAF24E179610066EACD /* FilterTableViewCell.swift */; };
 		0639ECB224E179AA0066EACD /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639ECB124E179AA0066EACD /* FiltersViewModel.swift */; };
 		067F11FF24E4C37200B74077 /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067F11FE24E4C37200B74077 /* MockRepository.swift */; };
+		067F120124E4C4EB00B74077 /* PhotoCellViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067F120024E4C4EA00B74077 /* PhotoCellViewModelTest.swift */; };
+		067F120424E4F3F700B74077 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067F120324E4F3F700B74077 /* Date+Extension.swift */; };
 		0680458E24E12566002319A6 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680458D24E12566002319A6 /* PhotoCollectionViewCell.swift */; };
 		0682558E24E21B9C005833BA /* FilterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682558D24E21B9C005833BA /* FilterObject.swift */; };
 		0682559024E21C4B005833BA /* FilterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682558F24E21C4B005833BA /* FilterCellViewModel.swift */; };
@@ -86,6 +88,8 @@
 		0639ECB124E179AA0066EACD /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
 		064589EF24E41BCE002C141B /* FlickrApp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FlickrApp.xcconfig; sourceTree = "<group>"; };
 		067F11FE24E4C37200B74077 /* MockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepository.swift; sourceTree = "<group>"; };
+		067F120024E4C4EA00B74077 /* PhotoCellViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellViewModelTest.swift; sourceTree = "<group>"; };
+		067F120324E4F3F700B74077 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		0680458D24E12566002319A6 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		0682558D24E21B9C005833BA /* FilterObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterObject.swift; sourceTree = "<group>"; };
 		0682558F24E21C4B005833BA /* FilterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellViewModel.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 		061EAF9F24E0C23D00E18460 /* Fickr */ = {
 			isa = PBXGroup;
 			children = (
+				067F120224E4F3A500B74077 /* Extensions */,
 				060656A424E3B128004D5A28 /* Localization */,
 				06DD620824E2CAF1005AA3CD /* Utilities */,
 				06E6178124E27ACB001C9353 /* AppConfigs */,
@@ -294,8 +299,17 @@
 				0606569924E37747004D5A28 /* DetailViewModelTests.swift */,
 				06B5B7DF24E3FC9F0062DA65 /* FilterCellViewModelTest.swift */,
 				06B5B7E124E3FDF30062DA65 /* FiltersViewModelTest.swift */,
+				067F120024E4C4EA00B74077 /* PhotoCellViewModelTest.swift */,
 			);
 			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		067F120224E4F3A500B74077 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				067F120324E4F3F700B74077 /* Date+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0682559124E25162005833BA /* PhotoDetailView */ = {
@@ -568,6 +582,7 @@
 				06C50D6A24E1299700523054 /* PhotoCellViewModel.swift in Sources */,
 				060656A624E3B235004D5A28 /* LocationService.swift in Sources */,
 				0682558E24E21B9C005833BA /* FilterObject.swift in Sources */,
+				067F120424E4F3F700B74077 /* Date+Extension.swift in Sources */,
 				061EAFA524E0C23D00E18460 /* PhotoGridViewController.swift in Sources */,
 				061EAFA124E0C23D00E18460 /* AppDelegate.swift in Sources */,
 				06DD620A24E2CB04005AA3CD /* LocationManager.swift in Sources */,
@@ -598,6 +613,7 @@
 				0699725C24E3635000A4E187 /* MockAPIService.swift in Sources */,
 				06B5B7E224E3FDF30062DA65 /* FiltersViewModelTest.swift in Sources */,
 				061EAFB824E0C24000E18460 /* PhotoGridViewModelTest.swift in Sources */,
+				067F120124E4C4EB00B74077 /* PhotoCellViewModelTest.swift in Sources */,
 				06B5B7E024E3FC9F0062DA65 /* FilterCellViewModelTest.swift in Sources */,
 				0606569A24E37747004D5A28 /* DetailViewModelTests.swift in Sources */,
 			);
