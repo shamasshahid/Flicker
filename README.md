@@ -39,5 +39,5 @@ Unit tests coverage for business logic in `PhotoGridViewModel`, `DetailViewModel
 ## Improvements
 
 * Add UI testing
-* Add user annotation
-* Add a remove all filters button to `filtersViewController`.
+* Add Flickr user annotation
+

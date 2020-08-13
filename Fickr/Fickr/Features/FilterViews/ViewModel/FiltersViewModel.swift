@@ -13,6 +13,7 @@ class FiltersViewModel {
     private var filtersArray: [FilterObject] = []
     
     var onFiltersUpdated: (([FilterObject]) -> ())?
+    var onFilterReset: (() -> Void)?
     
     init(allFilters: [FilterObject]) {
         filtersArray = allFilters
@@ -36,6 +37,14 @@ class FiltersViewModel {
         return FilterCellViewModel(model: filtersArray[index])
     }
     
+    
+    func resetAllFilters() {
+        for index in 0..<filtersArray.count {
+            filtersArray[index].isSelected = false
+        }
+        onFiltersUpdated?(filtersArray)
+        onFilterReset?()
+    }
     
     /// Updates the selection state for the model at the given index.
     /// - Parameters:

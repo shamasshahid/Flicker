@@ -16,7 +16,13 @@ class FiltersViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
     
-    var viewModel: FiltersViewModel!
+    var viewModel: FiltersViewModel! {
+        didSet {
+            viewModel.onFilterReset = { [weak self] in
+                self?.tableview.reloadData()
+            }
+        }
+    }
     
     enum FilerViewStrings: String {
         case done = "Done"
@@ -40,6 +46,9 @@ class FiltersViewController: UIViewController {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
+        viewModel.resetAllFilters()
+    }
 }
 
 extension FiltersViewController: UITableViewDataSource, UITableViewDelegate {

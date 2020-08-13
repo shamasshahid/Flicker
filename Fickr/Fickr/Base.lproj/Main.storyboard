@@ -17,14 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="M6j-Xn-Sk2">
-                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="84" width="414" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="k8i-f7-zgm"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jh6-Lm-3Cg">
-                                <rect key="frame" x="8" y="100" width="398" height="796"/>
+                                <rect key="frame" x="8" y="140" width="398" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hqc-vV-iJH">
                                     <size key="itemSize" width="205" height="207"/>
@@ -58,27 +58,32 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laG-Zk-TkP">
+                                <rect key="frame" x="359" y="44" width="35" height="30"/>
+                                <state key="normal" title="Filter"/>
+                                <connections>
+                                    <segue destination="26W-xA-lt1" kind="popoverPresentation" popoverAnchorView="laG-Zk-TkP" id="TVu-5J-BSr">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="M6j-Xn-Sk2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="45h-8B-sCC"/>
                             <constraint firstAttribute="bottom" secondItem="Jh6-Lm-3Cg" secondAttribute="bottom" id="5uk-eT-gr1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="laG-Zk-TkP" secondAttribute="trailing" constant="20" id="OVB-lx-J3i"/>
                             <constraint firstItem="Jh6-Lm-3Cg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-8" id="S33-H6-yLK"/>
                             <constraint firstItem="M6j-Xn-Sk2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Smd-Xc-JY7"/>
                             <constraint firstItem="M6j-Xn-Sk2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sxw-b9-PYQ"/>
                             <constraint firstItem="Jh6-Lm-3Cg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="T2j-2K-zz6"/>
                             <constraint firstItem="Jh6-Lm-3Cg" firstAttribute="top" secondItem="M6j-Xn-Sk2" secondAttribute="bottom" id="bRK-zZ-FLd"/>
+                            <constraint firstItem="laG-Zk-TkP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mLb-FG-yR5"/>
+                            <constraint firstItem="M6j-Xn-Sk2" firstAttribute="top" secondItem="laG-Zk-TkP" secondAttribute="bottom" constant="10" id="n1D-j9-ZX7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Oww-sK-Gqc">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="wC6-LQ-sdl">
-                            <connections>
-                                <segue destination="26W-xA-lt1" kind="popoverPresentation" popoverAnchorBarButtonItem="wC6-LQ-sdl" id="HaU-fj-83A">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="wC6-LQ-sdl"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Jh6-Lm-3Cg" id="Bsd-MI-kjM"/>
@@ -225,16 +230,25 @@
                                     <action selector="doneButtonTapped:" destination="26W-xA-lt1" eventType="touchUpInside" id="Sn9-os-4s1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YJ-wl-ZXa">
+                                <rect key="frame" x="20" y="16" width="106" height="30"/>
+                                <state key="normal" title="Reset All Filters"/>
+                                <connections>
+                                    <action selector="resetButtonTapped:" destination="26W-xA-lt1" eventType="touchUpInside" id="WU1-hF-yaA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="wZo-i7-z9t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3YJ-wl-ZXa" secondAttribute="trailing" constant="20" id="0OQ-ju-iGW"/>
                             <constraint firstItem="mG6-d8-8mv" firstAttribute="leading" secondItem="73E-On-PLo" secondAttribute="leading" id="5IF-gc-QIf"/>
                             <constraint firstItem="mG6-d8-8mv" firstAttribute="trailing" secondItem="73E-On-PLo" secondAttribute="trailing" id="6Wz-Xf-QZm"/>
+                            <constraint firstItem="3YJ-wl-ZXa" firstAttribute="leading" secondItem="73E-On-PLo" secondAttribute="leading" constant="20" id="BUI-MX-zcc"/>
                             <constraint firstItem="wZo-i7-z9t" firstAttribute="top" secondItem="73E-On-PLo" secondAttribute="top" constant="20" id="IKH-t9-hOr"/>
-                            <constraint firstItem="wZo-i7-z9t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="73E-On-PLo" secondAttribute="leading" constant="20" id="KoJ-o3-ZVg"/>
                             <constraint firstItem="73E-On-PLo" firstAttribute="trailing" secondItem="wZo-i7-z9t" secondAttribute="trailing" constant="20" id="UzI-8E-aaz"/>
                             <constraint firstItem="mG6-d8-8mv" firstAttribute="top" secondItem="wZo-i7-z9t" secondAttribute="bottom" constant="8" id="iNt-Y3-JE5"/>
                             <constraint firstAttribute="bottom" secondItem="mG6-d8-8mv" secondAttribute="bottom" id="k7V-iJ-c3s"/>
+                            <constraint firstItem="3YJ-wl-ZXa" firstAttribute="top" secondItem="73E-On-PLo" secondAttribute="top" constant="16" id="vUJ-G9-dNI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="73E-On-PLo"/>
                     </view>
