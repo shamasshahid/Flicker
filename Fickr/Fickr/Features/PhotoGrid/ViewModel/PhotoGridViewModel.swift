@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import SDWebImage
 
 class PhotoGridViewModel {
     
@@ -125,6 +126,15 @@ class PhotoGridViewModel {
         }
     }
     
+    func prefetchRequestedForIndices(indices: [Int]) {
+        var urlsToPrefetch: [URL] = []
+        for anIndex in indices {
+            if let model = getModelForIndex(index: anIndex), let thumbnailURL = URL(string: model.urlThumbnail ?? "") {
+                urlsToPrefetch.append(thumbnailURL)
+            }
+        }
+        SDWebImagePrefetcher.shared.prefetchURLs(urlsToPrefetch)
+    }
     
     /// Create and return PhotoCellViewModel for the Index to be used for photo Detail View
     /// - Parameter index: Index for the Photo

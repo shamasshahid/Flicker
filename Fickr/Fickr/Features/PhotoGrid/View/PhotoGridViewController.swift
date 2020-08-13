@@ -41,6 +41,7 @@ class PhotoGridViewController: UIViewController {
     private func setupViews() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.prefetchDataSource = self
         searchBar.delegate = self
     }
     
@@ -71,6 +72,14 @@ extension PhotoGridViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
         viewModel.searchString = searchBar.text
+    }
+}
+
+extension PhotoGridViewController: UICollectionViewDataSourcePrefetching {
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        let rowIndices = indexPaths.map( { $0.row })
+        viewModel.prefetchRequestedForIndices(indices: rowIndices)
     }
 }
 
